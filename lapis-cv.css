@@ -11,7 +11,6 @@
 @font-face {
     font-family: "SourceHanSerifCN";
     src: url('lapis-cv/SourceHanSerifCN-Bold.otf');
-    font-weight: bold;
 }
 
 @font-face {
@@ -90,19 +89,23 @@
     color: var(--primary-color);
     font-size: 12pt;
     border-bottom: 1px solid var(--primary-color);
-    margin-top: .7rem;
-    margin-bottom: .5rem;
+    margin-top: 2.5mm;
+    margin-bottom: 2.4mm;
     line-height: 1;
-    padding: 0.25rem 0;
+    padding: .8mm 0;
 }
 
 #write h3,
 #write h4,
-#write h5 {
+#write h5,
+#write h6 {
     font-size: 10.5pt;
 }
 
-#write h3 a {
+#write h3 a,
+#write h4 a,
+#write h5 a,
+#write h6 a {
     font-weight: normal;
     font-size: 10pt;
 }
@@ -111,6 +114,9 @@
 #write .md-rawblock,
 #write h1,
 #write h3,
+#write h4,
+#write h5,
+#write h6,
 #write blockquote,
 #write p {
     margin-top: 0;
@@ -158,7 +164,7 @@
 #write a {
     color: var(--link-color);
     font-family: 'JetBrainsMono';
-    text-underline-offset: .8mm;
+    text-decoration: none;
     text-decoration-thickness: from-font;
 }
 
@@ -173,5 +179,5 @@
 
 #write hr {
     border-top: 2px solid var(--shadow-color);
-    margin: 3rem 0 2.5rem 0;
+    margin: 12mm 0 10mm 0;
 }

@@ -1,0 +1,165 @@
+/* 
+ *   Typora Theme - Lapis CV  /  Author - YiNN
+ *   https://github.com/YiNNx/typora-theme-lapis-cv
+ */
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url('lapis-cv/JetBrainsMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: "SourceHanSerifCN";
+    src: url('lapis-cv/SourceHanSerifCN-Bold.otf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "SourceHanSansCN";
+    src: url('lapis-cv/SourceHanSansCN-Regular.otf');
+}
+
+@font-face {
+    font-family: "SourceHanSansCN";
+    src: url('lapis-cv/SourceHanSansCN-Bold.otf');
+    font-weight: bold;
+}
+
+:root {
+    --text-color: #353a42;
+    --primary-color: #4870ac;
+    --link-color: #0563c1;
+    --shadow-color: #dae3ea86;
+    --img-border-color: #dae3ea;
+}
+
+@media print {
+    @page {
+        margin: 12mm 6mm 0 6mm;
+    }
+
+    #write img[alt="avatar"] {
+        top: 18mm;
+        right: 8mm;
+    }
+}
+
+@media screen {
+    #write {
+        box-shadow: 0 0 3mm 1mm var(--shadow-color);
+        padding-left: 18mm;
+        padding-right: 18mm;
+    }
+
+    #write img[alt="avatar"] {
+        top: 28mm;
+        right: 17mm;
+    }
+}
+
+#write {
+    max-width: 220mm;
+    font-size: 10pt;
+    text-align: justify;
+    line-height: 1.8;
+    font-family: 'SourceHanSansCN';
+}
+
+#write h1,
+#write h2 {
+    font-family: 'SourceHanSerifCN';
+}
+
+#write h1,
+#write blockquote {
+    text-align: center;
+}
+
+#write h1 {
+    font-size: 16pt;
+    line-height: 1.5;
+}
+
+#write h2 {
+    color: var(--primary-color);
+    font-size: 12pt;
+    border-bottom: 1px solid var(--primary-color);
+    margin-top: .7rem;
+    margin-bottom: .5rem;
+    line-height: 1;
+    padding: 0.25rem 0;
+}
+
+#write h3,
+#write h4,
+#write h5 {
+    font-size: 10.5pt;
+}
+
+#write h3 a {
+    font-weight: normal;
+    font-size: 10pt;
+}
+
+#write .md-math-block,
+#write .md-rawblock,
+#write h1,
+#write h3,
+#write blockquote,
+#write p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#write ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 15px;
+}
+
+#write li {
+    padding-left: 6px;
+}
+
+#write img[alt="avatar"] {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    float: right;
+    object-fit: cover;
+    overflow: hidden;
+
+    width: 29mm;
+    height: 29mm;
+    border-radius: 50%;
+    border: 2px solid var(--img-border-color);
+    box-shadow: 0 0 0 3mm var(--bg-color);
+}
+
+#write p:has(img[alt="avatar"]) {
+    height: 0;
+    text-align: center;
+}
+
+#write a {
+    color: var(--link-color);
+    font-family: 'JetBrainsMono';
+    text-underline-offset: .8mm;
+    text-decoration-thickness: from-font;
+}
+
+#write mark {
+    background-color: var(--bg-color);
+    font-family: 'SourceHanSerifCN';
+}
+
+#write code {
+    background-color: var(--bg-color);
+    font-family: 'JetBrainsMono';
+}
+
+#write blockquote {
+    line-height: 1.6;
+}

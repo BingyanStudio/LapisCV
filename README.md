@@ -59,6 +59,13 @@
     --link-font: 'JetBrainsMono';           // 链接字体
     --code-font: 'JetBrainsMono';           // 代码字体
 }
+
+// 打印时的页边距
+@media print {
+    @page {
+        margin: 12mm 6mm 0 6mm;             // 上边距 左边距 右边距 下边距
+    }
+}
 ```
 
 </details>

@@ -39,6 +39,7 @@
 @font-face {
     font-family: "SourceHanSerifCN";
     src: url('lapis-resume/SourceHanSerifCN-Bold.otf');
+    font-weight: bold;
 }
 
 @font-face {

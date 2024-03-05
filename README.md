@@ -6,7 +6,9 @@
 
 ## 预览
 
-![](example/preview-cn.png)
+![](.assets/preview.png)
+
+<div align="center"><a href=".assets/preview.pdf">PDF 样例</a></div>
 
 ## 安装与使用
 

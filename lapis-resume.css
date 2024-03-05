@@ -1,15 +1,17 @@
 /* 
- *   Typora Theme - Lapis CV  /  Author - YiNN
- *   https://github.com/YiNNx/typora-theme-lapis-cv
+ *   Typora Theme - Lapis CV  /  Author - YiNN (BingyanStudio)
+ *   https://github.com/BingyanStudio/typora-theme-lapis-resume
  */
 
 /* Custom Config */
 
 :root {
-    --text-font: 'SourceHanSansCN';
-    --title-font: 'SourceHanSerifCN';
-    --link-font: 'JetBrainsMono';
-    --code-font: 'JetBrainsMono';
+    --text-size: 10pt;
+    --print-margin-side: 6mm;
+    --print-margin-top: 12mm;
+    --print-margin-bottom: 0;
+    --line-height: 1.8;
+    --avatar-width: 29mm;
 
     --text-color: #353a42;
     --primary-color: #4870ac;
@@ -17,42 +19,43 @@
     --shadow-color: #dae3eac9;
     --border-color: #dae3ea;
 
-    --text-size: 10pt;
     --h1-size: 16pt;
     --h2-size: 12pt;
     --h3-size: 10.5pt;
 
-    --line-height: 1.8;
-    --avatar-width: 29mm;
+    --text-font: 'SourceHanSansCN';
+    --title-font: 'SourceHanSerifCN';
+    --link-font: 'JetBrainsMono';
+    --code-font: 'JetBrainsMono';
 }
 
 /* Font Face */
 
 @font-face {
     font-family: "JetBrainsMono";
-    src: url('lapis-cv/JetBrainsMono-Regular.ttf');
+    src: url('lapis-resume/JetBrainsMono-Regular.ttf');
 }
 
 @font-face {
     font-family: "SourceHanSerifCN";
-    src: url('lapis-cv/SourceHanSerifCN-Bold.otf');
+    src: url('lapis-resume/SourceHanSerifCN-Bold.otf');
 }
 
 @font-face {
     font-family: "SourceHanSansCN";
-    src: url('lapis-cv/SourceHanSansCN-Regular.otf');
+    src: url('lapis-resume/SourceHanSansCN-Regular.otf');
 }
 
 @font-face {
     font-family: "SourceHanSansCN";
-    src: url('lapis-cv/SourceHanSansCN-Bold.otf');
+    src: url('lapis-resume/SourceHanSansCN-Bold.otf');
     font-weight: bold;
 }
 
 /* Global */
 
 #write {
-    max-width: 220mm;
+    max-width: 224mm;
     text-align: justify;
     font-size: var(--text-size);
     line-height: var(--line-height);
@@ -62,8 +65,9 @@
 @media screen {
     #write {
         box-shadow: 0 0 4mm 0 var(--shadow-color);
-        padding-left: 18mm;
-        padding-right: 18mm;
+        padding-left: 20mm;
+        padding-right: 20mm;
+        padding-top: 12mm;
     }
 }
 
@@ -71,7 +75,7 @@
 
 @media print {
     @page {
-        margin: 12mm 6mm 0 6mm;
+        margin: var(--print-margin-top) var(--print-margin-side) var(--print-margin-bottom) var(--print-margin-side);
     }
 }
 
@@ -211,7 +215,7 @@
 
 #write hr {
     border-top: 2px solid var(--shadow-color);
-    margin: 12mm 0 10mm 0;
+    margin: 15mm 0 12mm 0;
 }
 
 @media print {

@@ -1,0 +1,296 @@
+/* 
+ *   Lapis CV  /  Author - YiNN (BingyanStudio)
+ *   https://github.com/BingyanStudio/LapisCV
+ */
+
+/* Custom Config */
+
+body {
+  --default-font: "Source Han Sans CN", "Inter", sans-serif;
+  /*Note and Settings Text*/
+  --font-monospace: "JetBrains Mono", "Source Code Pro", monospace;
+  /*Code block text*/
+
+  
+  --text-size: 10pt;
+  --font-text-size: 10pt;
+  --line-height: 1.8;
+  --avatar-width: 29mm;
+  --p-spacing: 2mm;
+  --list-indent: 2.5mm;
+  
+  --primary-color: #4870ac;
+  --link-color: #0563c1;
+  --shadow-color: #dae3eac9;
+  --border-color: #dae3ea;
+  
+  --h1-size: 16pt;
+  --h1-line-height: 1;
+  --h1-weight: bold;
+  --h2-weight: bold;
+  --h3-weight: bold;
+
+  --h2-size: 12pt;
+  --h2-color: var(--primary-color);
+
+  --h3-size: 10.5pt;
+
+  --title-font: var(--default-font);
+  --link-font: var(--font-monospace);
+  --code-font: var(--font-monospace);
+
+  --file-line-width: 224mm;
+
+  --background-primary: #ffffff;
+  /*Note background*/
+  --text-normal: #353a42;
+  /*Text body of note*/
+  --text-accent: #0563c1;
+  --link-external-color: var(--text-accent-hover);
+  --link-external-decoration: white;
+  /*Links*/
+  --text-accent-hover: #0563c1;
+  /*Links hover*/
+}
+
+@media print {
+  body {
+    padding: 0 8mm 0 8mm;
+  }
+}
+
+/* Global */
+
+:root {
+  text-align: justify;
+  font-size: var(--text-size);
+  line-height: var(--line-height);
+  font-family: var(--default-font);
+}
+
+.cm-sizer {
+  max-height: 311mm;
+  box-shadow: 0 0 4mm 0 var(--shadow-color);
+  padding-left: 20mm;
+  padding-right: 20mm;
+  padding-top: 12mm;
+}
+
+/* Title */
+
+.HyperMD-header.HyperMD-header-1.cm-line,
+.HyperMD-header.HyperMD-header-2.cm-line,
+h1,
+h2 {
+  font-family: var(--title-font);
+}
+
+h1,
+.HyperMD-header.HyperMD-header-1.cm-line {
+  font-size: 16pt;
+  line-height: 1.5;
+}
+
+h1,
+.HyperMD-header.HyperMD-header-1.cm-line,
+.HyperMD-quote.cm-line,
+blockquote {
+  text-align: center;
+}
+
+.inline-title {
+  text-align: center;
+  font-size: 16pt;
+}
+
+.HyperMD-header.HyperMD-quote-1.cm-line {
+  text-align: center;
+}
+
+.HyperMD-header.HyperMD-header-2.cm-line {
+  color: var(--primary-color);
+  font-size: 12pt;
+  border-bottom: 1px solid var(--primary-color);
+  line-height: 1;
+  padding: 1mm 0;
+  padding-top: 2mm;
+}
+
+.HyperMD-header.HyperMD-header-3.cm-line {
+  font-size: 9pt;
+  padding-top: 1.5mm;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: var(--h2-size);
+  border-bottom: 1px solid var(--primary-color);
+  margin-top: 2.4mm;
+  margin-bottom: 2mm;
+  line-height: 1;
+  padding: 1mm 0;
+}
+
+h3,
+.HyperMD-header.HyperMD-header-3.cm-line,
+.HyperMD-header.HyperMD-header-5.cm-line,
+.HyperMD-header.HyperMD-header-4.cm-line,
+h4,
+h5,
+h6 {
+  font-size: var(--h3-size) - 0.5pt;
+}
+
+.HyperMD-header span.cm-link,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: normal;
+  font-size: var(--h3-size);
+}
+
+.md-math-block,
+.md-rawblock,
+h1,
+.HyperMD-header.HyperMD-header-3.cm-line,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+.HyperMD-quote.HyperMD-quote-1.cm-line,
+.cm-line,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p, li{
+  font-size: 10pt;
+}
+
+/* List */
+
+.HyperMD-list-line.HyperMD-list-line-1.cm-line {
+  font-size: var(--text-size);
+}
+
+ul {
+  list-style-type: '\2022';
+  padding-inline-start: 3mm;
+  padding-inline-end: 1mm;
+  margin: 0;
+}
+
+ol {
+  padding-inline-start: 5mm;
+  padding-inline-end: 1mm;
+}
+
+ol li {
+  padding-left: 0;
+}
+
+ol,
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+li {
+  padding-left: 1.5mm;
+}
+
+ul ::marker {
+  font-weight: bolder;
+}
+
+ol ::marker {
+  font-weight: normal;
+}
+
+/* Avatar */
+
+img[alt="avatar"] {
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  float: right;
+  object-fit: cover;
+  overflow: hidden;
+
+  width: var(--avatar-width);
+  height: var(--avatar-width);
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 0 3mm var(--background-primary);
+}
+
+p:has(img[alt="avatar"]),
+.cm-line:has(img[alt="avatar"]) {
+  height: 0;
+  text-align: center;
+}
+
+@media screen {
+  img[alt="avatar"] {
+    top: 1mm;
+    right: 0;
+  }
+}
+
+@media print {
+  img[alt="avatar"] {
+    top: 10mm;
+    right: 5mm;
+  }
+}
+
+/* Link */
+
+a,
+span.cm-link {
+  font-family: var(--link-font);
+  text-decoration: none;
+}
+
+span.cm-underline {
+  text-decoration-color: white;
+}
+
+/* Code */
+
+.cm-inline-code,
+code {
+  background-color: var(--background-primary);
+  font-family: var(--code-font);
+}
+
+/* Block Quote */
+
+blockquote,
+.HyperMD-quote.HyperMD-quote-1.cm-line {
+  line-height: 1.6;
+}
+
+:before {
+  visibility: hidden;
+}
+
+/* Horizontal Line */
+
+hr {
+  border-top: 2px solid var(--shadow-color);
+  margin: 15mm 0 12mm 0;
+}
+
+@media print {
+  hr {
+    page-break-after: always;
+    margin: 0;
+    visibility: hidden;
+  }
+}

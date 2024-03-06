@@ -1,24 +1,33 @@
 <h1 align="center">
-    Lapis Resume
+    LapisCV
 </h1>
 <p align="center">
-    📃 开箱即用的 Typora 简历
+    📃 开箱即用的 Obsidian / Typora 简历
 </p>
-
 ### 预览
+
+<div align="center">Obsidian</div>
 
 ![Screenshot](.assets/screenshot.png)
 
-<div align="center"><a href=".assets/preview.pdf">PDF 样例</a></div>
+<div align="center">Typora</div>
 
-- 易于编辑，无需额外排版，所见即所得
+- 基于 Markdown 格式，适配 Obsidian / Typora，易于编辑，所见即所得
 - 风格简洁正式，适用于大部分求职 / 求学场景
+
+[PDF样例](.assets/preview.pdf)
 
 ### 安装与使用
 
+#### Obsidian
+
+下载 Release，将本仓库中的 obsidian 目录作为仓库在 Obsidian 打开即可
+
+#### Typora
+
 1. 下载 Release，设置 Lapis Resume 作为主题（将 lapis-resume.css 与 lapis-resume 目录放入主题文件夹）
 
-2. 打开模版文件 [template.md](template/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 格式简历文件。
+2. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 格式简历文件。
 
 ### 格式
 
@@ -31,7 +40,15 @@
 
 ### 自定义样式
 
-支持自定义细节样式，修改 `lapis-cv.css` 代码文件开头的 `Custom Config` 块对应值并重启 Typora 即可
+支持自定义样式，便于适配不同体量的单页内容 & 根据喜好调整样式细节
+
+#### Obsidian
+
+// TODO
+
+#### Typora
+
+修改 `lapis-cv.css` 代码文件开头的 `Custom Config` 块对应值并重启 Typora 即可
 
 ```css
 :root {

@@ -1,6 +1,6 @@
 /* 
  *   Typora Theme - Lapis CV  /  Author - YiNN (BingyanStudio)
- *   https://github.com/BingyanStudio/typora-theme-lapis-resume
+ *   https://github.com/BingyanStudio/LapisCV
  */
 
 /* Custom Config */
@@ -36,17 +36,17 @@
 
 @font-face {
     font-family: "JetBrainsMono";
-    src: url('lapis-resume/JetBrainsMono-Regular.ttf');
+    src: url('lapis-cv/JetBrainsMono-Regular.ttf');
 }
 
 @font-face {
     font-family: "SourceHanSansCN";
-    src: url('lapis-resume/SourceHanSansCN-Regular.otf');
+    src: url('lapis-cv/SourceHanSansCN-Regular.otf');
 }
 
 @font-face {
     font-family: "SourceHanSansCN";
-    src: url('lapis-resume/SourceHanSansCN-Bold.otf');
+    src: url('lapis-cv/SourceHanSansCN-Bold.otf');
     font-weight: bold;
 }
 

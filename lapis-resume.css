@@ -21,7 +21,7 @@
     --h3-size: 10.5pt;
 
     --text-font: 'SourceHanSansCN';
-    --title-font: 'SourceHanSerifCN';
+    --title-font: 'SourceHanSansCN';
     --link-font: 'JetBrainsMono';
     --code-font: 'JetBrainsMono';
 }
@@ -37,12 +37,6 @@
 @font-face {
     font-family: "JetBrainsMono";
     src: url('lapis-resume/JetBrainsMono-Regular.ttf');
-}
-
-@font-face {
-    font-family: "SourceHanSerifCN";
-    src: url('lapis-resume/SourceHanSerifCN-Bold.otf');
-    font-weight: bold;
 }
 
 @font-face {

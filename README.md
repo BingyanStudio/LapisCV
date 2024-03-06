@@ -9,8 +9,6 @@
 
 ![Screenshot](.assets/screenshot.png)
 
-![Preview](.assets/preview.png)
-
 <div align="center"><a href=".assets/preview.pdf">PDF 样例</a></div>
 
 - 易于编辑，无需额外排版，所见即所得

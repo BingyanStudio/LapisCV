@@ -134,20 +134,37 @@
 
 #write ul {
     list-style-type: '\2022';
+    padding-inline-start: 3mm;
+    padding-inline-end: 1mm;
+}
+
+#write ol {
+    padding-inline-start: 5mm;
+    padding-inline-end: 1mm;
+}
+
+#write ol li {
+    padding-left: 0;
+}
+
+#write ol,
+#write ul {
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0;
     margin-inline-end: 0;
-    padding-inline-start: 3mm;
-    padding-inline-end: 1mm;
 }
 
 #write li {
     padding-left: 1.5mm;
 }
 
-::marker {
+ul ::marker {
     font-weight: bolder;
+}
+
+ol ::marker {
+    font-weight: normal;
 }
 
 /* Avatar */

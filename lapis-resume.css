@@ -91,9 +91,9 @@
     font-size: var(--h2-size);
     border-bottom: 1px solid var(--primary-color);
     margin-top: 2.4mm;
-    margin-bottom: 2.3mm;
+    margin-bottom: 2mm;
     line-height: 1;
-    padding: .8mm 0;
+    padding: 1mm 0;
 }
 
 #write h3,

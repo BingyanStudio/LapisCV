@@ -11,19 +11,20 @@ body {
   --font-monospace: "JetBrains Mono", "Source Code Pro", monospace;
   /*Code block text*/
 
-  
   --text-size: 10pt;
   --font-text-size: 10pt;
   --line-height: 1.8;
   --avatar-width: 29mm;
   --p-spacing: 2mm;
+  --heading-spacing: 0;
+  --list-indent-editing: 0;
   --list-indent: 2.5mm;
-  
+
   --primary-color: #4870ac;
   --link-color: #0563c1;
   --shadow-color: #dae3eac9;
   --border-color: #dae3ea;
-  
+
   --h1-size: 16pt;
   --h1-line-height: 1;
   --h1-weight: bold;
@@ -68,13 +69,28 @@ body {
   font-family: var(--default-font);
 }
 
-.cm-sizer {
+.cm-sizer,
+.markdown-preview-sizer {
+  margin: auto;
+  max-width: 224mm;
   max-height: 311mm;
   box-shadow: 0 0 4mm 0 var(--shadow-color);
   padding-left: 20mm;
   padding-right: 20mm;
   padding-top: 12mm;
 }
+
+.cm-line:has(br) {
+  height: 0;
+}
+
+.cm-line {
+  text-align: justify;
+  font-size: var(--text-size);
+  line-height: var(--line-height);
+  font-family: var(--default-font);
+}
+
 
 /* Title */
 
@@ -116,29 +132,29 @@ blockquote {
   padding-top: 2mm;
 }
 
+.HyperMD-header.HyperMD-header-5.cm-line,
+.HyperMD-header.HyperMD-header-4.cm-line,
 .HyperMD-header.HyperMD-header-3.cm-line {
-  font-size: 9pt;
-  padding-top: 1.5mm;
+  margin-top: 1.5mm !important;
+  font-size: 10.5pt;
+  padding-top: 0;
 }
 
 h2 {
   color: var(--primary-color);
   font-size: var(--h2-size);
   border-bottom: 1px solid var(--primary-color);
-  margin-top: 2.4mm;
+  margin-top: 2mm;
   margin-bottom: 2mm;
   line-height: 1;
   padding: 1mm 0;
 }
 
 h3,
-.HyperMD-header.HyperMD-header-3.cm-line,
-.HyperMD-header.HyperMD-header-5.cm-line,
-.HyperMD-header.HyperMD-header-4.cm-line,
 h4,
 h5,
 h6 {
-  font-size: var(--h3-size) - 0.5pt;
+  font-size: var(--h3-size);
 }
 
 .HyperMD-header span.cm-link,
@@ -153,7 +169,6 @@ h6 a {
 .md-math-block,
 .md-rawblock,
 h1,
-.HyperMD-header.HyperMD-header-3.cm-line,
 h3,
 h4,
 h5,
@@ -166,7 +181,8 @@ p {
   margin-bottom: 0;
 }
 
-p, li{
+p,
+li {
   font-size: 10pt;
 }
 
@@ -212,6 +228,10 @@ ol ::marker {
   font-weight: normal;
 }
 
+span.cm-formatting {
+  padding-right: 2.2mm;
+}
+
 /* Avatar */
 
 img[alt="avatar"] {
@@ -244,8 +264,8 @@ p:has(img[alt="avatar"]),
 
 @media print {
   img[alt="avatar"] {
-    top: 10mm;
-    right: 5mm;
+    top: 27mm;
+    right: 8mm;
   }
 }
 
@@ -272,8 +292,10 @@ code {
 /* Block Quote */
 
 blockquote,
+.markdown-rendered blockquote,
 .HyperMD-quote.HyperMD-quote-1.cm-line {
   line-height: 1.6;
+  border-left: none;
 }
 
 :before {

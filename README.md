@@ -6,16 +6,13 @@
 </p>
 ### 预览
 
-<div align="center">Obsidian</div>
-
 ![Screenshot](.assets/screenshot.png)
 
 <div align="center">Typora</div>
 
+- [PDF样例](.assets/preview.pdf)
 - 基于 Markdown 格式，适配 Obsidian / Typora，易于编辑，所见即所得
 - 风格简洁正式，适用于大部分求职 / 求学场景
-
-[PDF样例](.assets/preview.pdf)
 
 ### 安装与使用
 
@@ -41,10 +38,6 @@
 ### 自定义样式
 
 支持自定义样式，便于适配不同体量的单页内容 & 根据喜好调整样式细节
-
-#### Obsidian
-
-// TODO
 
 #### Typora
 
@@ -80,3 +73,6 @@
 }
 ```
 
+#### Obsidian
+
+// TODO

@@ -1,9 +1,10 @@
+# 八爪猫
 > 电话：`(123)456-7890`       邮箱：`octocat@github.com`
-<img src="https://avatars.githubusercontent.com/u/86649490?v=4" alt="avatar">
+<img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="avatar">
 ## 基本信息
 ### 八爪科技大学 - 本科 - 软件工程专业  (2008.02 - 2024.06)
-- **曾获奖项：** GitHub 认证八爪编码员，敏捷摸鱼实践者
-  **校园经历：** 担任 OctoStudio 队长，致力于推动服务于八爪生物的技术创新和项目开发。
+- **曾获奖项：**GitHub 认证八爪编码员，敏捷章鱼实践者
+- **校园经历：**担任 OctoStudio 队长，致力于推动服务于八爪生物的技术创新和项目开发。
 **Github：** [github.com/octocat](https://github.com/octocat)   |  **个人博客：** [octocat.github.io](https://octocat.github.io)
 ## 专业技能
 - **熟练掌握多种编程语言，包括 Octolang，OctoScript 等**，对**面向对象**和**函数式编程范式**有很好的理解，专注于编写清晰，高效，可维护的代码。

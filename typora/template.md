@@ -2,7 +2,7 @@
 
 > 电话：`(123)456-7890`       邮箱：`octocat@github.com`
 
-<img src="avatar.png" alt="avatar">
+<img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="avatar">
 
 ## 基本信息
 

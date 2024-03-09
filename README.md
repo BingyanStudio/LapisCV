@@ -5,7 +5,7 @@
     📃 开箱即用的 Obsidian / Typora 简历
 </p>
 
-基于 Markdown 格式，易于编辑，所见即所得。风格简洁正式，适用于大部分求职求学场景。
+基于 Markdown 格式，易于编辑，所见即所得。风格简洁正式，适用于大部分求职 / 求学场景。
 
 ### 预览
 
@@ -18,19 +18,18 @@
 </div>
 </div>
 
-<details>
- <summary><a href=".assets/preview.pdf">PDF样例</a></summary>
+- [PDF样例](.assets/preview.pdf)
+
 <br>
 <div align="center">
-<img width="100%" alt="Screenshot" src=".assets/preview.png">
+<img width="80%" alt="Screenshot" src=".assets/preview.png">
 </div>
-</details>
 
 ### 安装与使用
 
 #### Obsidian
 
-下载 Release，将 `lapis-cv-obsidian` 目录作为仓库在 Obsidian 打开，编辑 template.md 并导出 PDF 文件即可。
+下载 Release，将 `lapis-cv-obsidian` 目录作为 Vault 在 Obsidian 打开，编辑 template 并导出 PDF 文件即可。
 
 #### Typora
 
@@ -53,7 +52,7 @@
 
 #### Obsidian
 
-可在 设置 - 外观 中快速更换主题色与字体，自定义 CSS 样式在 `.obsidian/themes/lapis-cv.css` 修改。
+可在 设置 - 外观 中快速更换主题色与字体，其他样式在 `.obsidian/themes/lapis-cv.css` 修改。
 
 #### Typora
 
@@ -85,7 +84,7 @@
     --code-font: 'JetBrainsMono';           // 代码字体
 }
 
-// 打印时的页边距
+// 打印页边距
 @media print {
     @page {
         margin: 12mm 6mm 0 6mm;             // 上边距 左边距 下边距 右边距

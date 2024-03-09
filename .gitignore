@@ -1,2 +1,7 @@
 .DS_Store
 /.obsidian
+plugins
+core-plugins.json
+community-plugins.json		
+core-plugins-migration.json	
+workspace.json

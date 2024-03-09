@@ -7,56 +7,44 @@
 
 body {
   --default-font: "Source Han Sans CN", "Inter", sans-serif;
-  /*Note and Settings Text*/
   --font-monospace: "JetBrains Mono", "Source Code Pro", monospace;
-  /*Code block text*/
+  --link-font: var(--font-monospace);
 
-  --text-size: 10pt;
-  --font-text-size: 10pt;
-  --line-height: 1.8;
-  --avatar-width: 29mm;
-  --p-spacing: 2mm;
-  --heading-spacing: 0;
-  --list-indent-editing: 0;
-  --list-indent: 2.5mm;
-
-  --primary-color: #4870ac;
-  --link-color: #0563c1;
+  --text-normal: #424750;
+  --background-primary: white;
+  --code-background: var(--background-primary);
   --shadow-color: #dae3eac9;
   --border-color: #dae3ea;
+  --h2-color: var(--color-accent);
+  --link-external-color: var(--text-accent-hover);
+  --link-external-decoration: var(--background-primary);
+  --link-color: hsl(calc(var(--accent-h) - 10), calc(var(--accent-s) * 1.8), calc(var(--accent-l) * 1.2));
+  --text-accent: var(--link-color);
+  --text-accent-hover: var(--link-color);
 
+  --font-text-size: 10pt;
   --h1-size: 16pt;
-  --h1-line-height: 1;
+
   --h1-weight: bold;
   --h2-weight: bold;
   --h3-weight: bold;
 
-  --h2-size: 12pt;
-  --h2-color: var(--primary-color);
+  --line-height: 1.8;
+  --h1-line-height: 1;
 
-  --h3-size: 10.5pt;
+  --avatar-width: 29mm;
 
-  --title-font: var(--default-font);
-  --link-font: var(--font-monospace);
-  --code-font: var(--font-monospace);
-
+  --p-spacing: 0;
+  --heading-spacing: 0;
+  --list-spacing: 0;
+  --list-indent-editing: 0;
+  --list-indent: 2.5mm;
   --file-line-width: 224mm;
-
-  --background-primary: #ffffff;
-  /*Note background*/
-  --text-normal: #353a42;
-  /*Text body of note*/
-  --text-accent: #0563c1;
-  --link-external-color: var(--text-accent-hover);
-  --link-external-decoration: white;
-  /*Links*/
-  --text-accent-hover: #0563c1;
-  /*Links hover*/
 }
 
 @media print {
   body {
-    padding: 0 8mm 0 8mm;
+    padding: 20mm 8mm 0 8mm;
   }
 }
 
@@ -64,9 +52,20 @@ body {
 
 :root {
   text-align: justify;
-  font-size: var(--text-size);
+  font-family: var(--default-font);
+}
+
+p,
+li,
+.cm-line {
+  font-size: 10pt;
+  text-align: justify;
   line-height: var(--line-height);
   font-family: var(--default-font);
+}
+
+.cm-line {
+  line-height: 1.8;
 }
 
 .cm-sizer,
@@ -77,120 +76,79 @@ body {
   box-shadow: 0 0 4mm 0 var(--shadow-color);
   padding-left: 20mm;
   padding-right: 20mm;
-  padding-top: 12mm;
+  padding-top: 8mm;
 }
 
 .cm-line:has(br) {
   height: 0;
 }
 
-.cm-line {
-  text-align: justify;
-  font-size: var(--text-size);
-  line-height: var(--line-height);
-  font-family: var(--default-font);
-}
-
-
-/* Title */
-
-.HyperMD-header.HyperMD-header-1.cm-line,
-.HyperMD-header.HyperMD-header-2.cm-line,
+p,
 h1,
-h2 {
-  font-family: var(--title-font);
-}
-
-h1,
-.HyperMD-header.HyperMD-header-1.cm-line {
-  font-size: 16pt;
-  line-height: 1.5;
-}
-
-h1,
-.HyperMD-header.HyperMD-header-1.cm-line,
-.HyperMD-quote.cm-line,
-blockquote {
-  text-align: center;
-}
-
-.inline-title {
-  text-align: center;
-  font-size: 16pt;
-}
-
-.HyperMD-header.HyperMD-quote-1.cm-line {
-  text-align: center;
-}
-
-.HyperMD-header.HyperMD-header-2.cm-line {
-  color: var(--primary-color);
-  font-size: 12pt;
-  border-bottom: 1px solid var(--primary-color);
-  line-height: 1;
-  padding: 1mm 0;
-  padding-top: 2mm;
-}
-
-.HyperMD-header.HyperMD-header-5.cm-line,
-.HyperMD-header.HyperMD-header-4.cm-line,
-.HyperMD-header.HyperMD-header-3.cm-line {
-  margin-top: 1.5mm !important;
-  font-size: 10.5pt;
-  padding-top: 0;
-}
-
-h2 {
-  color: var(--primary-color);
-  font-size: var(--h2-size);
-  border-bottom: 1px solid var(--primary-color);
-  margin-top: 2mm;
-  margin-bottom: 2mm;
-  line-height: 1;
-  padding: 1mm 0;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  font-size: var(--h3-size);
-}
-
-.HyperMD-header span.cm-link,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  font-weight: normal;
-  font-size: var(--h3-size);
-}
-
-.md-math-block,
-.md-rawblock,
-h1,
+h2,
 h3,
 h4,
 h5,
 h6,
 blockquote,
-.HyperMD-quote.HyperMD-quote-1.cm-line,
-.cm-line,
-p {
+.cm-line {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-p,
-li {
-  font-size: 10pt;
+/* Title */
+
+.inline-title {
+  visibility: hidden;
+}
+
+h1,
+.HyperMD-header.HyperMD-header-1.cm-line {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line-height);
+  text-align: center;
+  margin-block-start: 6mm !important;
+  margin-block-end: 1.4mm !important;
+}
+
+.HyperMD-header.HyperMD-header-1.cm-line {
+  padding-bottom: 1mm;
+}
+
+h2,
+.HyperMD-header.HyperMD-header-2.cm-line {
+  color: var(--color-accent);
+  font-size: 12.5pt;
+  border-bottom: 1px solid var(--color-accent);
+  line-height: 1;
+  padding: .5mm 0;
+  margin-block-start: 2.4mm !important;
+  margin-block-end: 2.3mm !important;
+}
+
+h3,
+h4,
+h5,
+h6,
+.HyperMD-header.HyperMD-header-6.cm-line,
+.HyperMD-header.HyperMD-header-5.cm-line,
+.HyperMD-header.HyperMD-header-4.cm-line,
+.HyperMD-header.HyperMD-header-3.cm-line {
+  font-size: 11pt;
+  padding-top: 0;
+  margin-block-start: 1mm !important;
+  margin-block-end: 1mm !important;
+}
+
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+.HyperMD-header span.cm-link {
+  font-size: 10.5pt;
 }
 
 /* List */
-
-.HyperMD-list-line.HyperMD-list-line-1.cm-line {
-  font-size: var(--text-size);
-}
 
 ul {
   list-style-type: '\2022';
@@ -228,7 +186,7 @@ ol ::marker {
   font-weight: normal;
 }
 
-span.cm-formatting {
+.cm-formatting-list {
   padding-right: 2.2mm;
 }
 
@@ -257,14 +215,14 @@ p:has(img[alt="avatar"]),
 
 @media screen {
   img[alt="avatar"] {
-    top: 1mm;
+    top: 2mm;
     right: 0;
   }
 }
 
 @media print {
   img[alt="avatar"] {
-    top: 27mm;
+    top: 28mm;
     right: 8mm;
   }
 }
@@ -272,30 +230,20 @@ p:has(img[alt="avatar"]),
 /* Link */
 
 a,
-span.cm-link {
+span.cm-link,
+.external-link {
   font-family: var(--link-font);
-  text-decoration: none;
-}
-
-span.cm-underline {
-  text-decoration-color: white;
-}
-
-/* Code */
-
-.cm-inline-code,
-code {
-  background-color: var(--background-primary);
-  font-family: var(--code-font);
+  font-weight: normal !important;
 }
 
 /* Block Quote */
 
-blockquote,
+blockquote p,
 .markdown-rendered blockquote,
-.HyperMD-quote.HyperMD-quote-1.cm-line {
+.HyperMD-quote.cm-line {
   line-height: 1.6;
   border-left: none;
+  text-align: center;
 }
 
 :before {
@@ -304,15 +252,15 @@ blockquote,
 
 /* Horizontal Line */
 
+.hr,
 hr {
-  border-top: 2px solid var(--shadow-color);
-  margin: 15mm 0 12mm 0;
+  padding: 10mm 0 0mm 0 !important;
 }
 
 @media print {
   hr {
     page-break-after: always;
-    margin: 0;
+    padding: 0;
     visibility: hidden;
   }
 }

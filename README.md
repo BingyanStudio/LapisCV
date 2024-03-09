@@ -4,27 +4,39 @@
 <p align="center">
     📃 开箱即用的 Obsidian / Typora 简历
 </p>
+
+基于 Markdown 格式，易于编辑，所见即所得。风格简洁正式，适用于大部分求职求学场景。
+
 ### 预览
 
-![Screenshot](.assets/screenshot.png)
+- Obsidian / Typora 编辑页
 
-<div align="center">Typora</div>
+<div align="center">
+<div>
+<img src=".assets/screenshot-obsidian.png" width="90%" />
+<img src=".assets/screenshot.png" width="90%" />
+</div>
+</div>
 
-- [PDF样例](.assets/preview.pdf)
-- 基于 Markdown 格式，适配 Obsidian / Typora，易于编辑，所见即所得
-- 风格简洁正式，适用于大部分求职 / 求学场景
+<details>
+ <summary><a href=".assets/preview.pdf">PDF样例</a></summary>
+<br>
+<div align="center">
+<img width="100%" alt="Screenshot" src=".assets/preview.png">
+</div>
+</details>
 
 ### 安装与使用
 
 #### Obsidian
 
-下载 Release，将本仓库中的 obsidian 目录作为仓库在 Obsidian 打开即可
+下载 Release，将 `lapis-cv-obsidian` 目录作为仓库在 Obsidian 打开，编辑 template.md 并导出 PDF 文件即可。
 
 #### Typora
 
-1. 下载 Release，设置 Lapis Resume 作为主题（将 lapis-resume.css 与 lapis-resume 目录放入主题文件夹）
+1. 下载 Release，设置 Lapis CV 作为主题（将 lapis-cv.css 与 lapis-cv 目录放入主题文件夹并重启 Typora）。
 
-2. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 格式简历文件。
+2. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
 
 ### 格式
 
@@ -37,13 +49,21 @@
 
 ### 自定义样式
 
-支持自定义样式，便于适配不同体量的单页内容 & 根据喜好调整样式细节
+支持自定义样式，便于适配不同体量的单页内容 & 根据喜好调整样式细节。
+
+#### Obsidian
+
+可在 设置 - 外观 中快速更换主题色与字体，自定义 CSS 样式在 `.obsidian/themes/lapis-cv.css` 修改。
 
 #### Typora
 
-修改 `lapis-cv.css` 代码文件开头的 `Custom Config` 块对应值并重启 Typora 即可
+修改主题文件夹中的 `lapis-cv.css` 并重启 Typora。
+
+部分自定义变量含义如下：
 
 ```css
+/* Custom Config */
+
 :root {
     --text-size: 10pt;                      // 文本字体大小
     --line-height: 1.8;                     // 文本行高
@@ -72,7 +92,3 @@
     }
 }
 ```
-
-#### Obsidian
-
-// TODO

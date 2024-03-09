@@ -24,6 +24,8 @@ body {
 
   --font-text-size: 10pt;
   --h1-size: 16pt;
+  --h2-size: 12pt;
+  --h3-size: 11pt;
 
   --h1-weight: bold;
   --h2-weight: bold;
@@ -121,8 +123,8 @@ h2,
   font-size: 12.5pt;
   border-bottom: 1px solid var(--color-accent);
   line-height: 1;
-  padding: .5mm 0;
-  margin-block-start: 2.4mm !important;
+  padding: 1mm 0;
+  margin-block-start: 2mm !important;
   margin-block-end: 2.3mm !important;
 }
 

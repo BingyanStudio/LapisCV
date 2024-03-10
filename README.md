@@ -29,11 +29,11 @@
 
 #### Obsidian
 
-下载 Release，将 `lapis-cv-obsidian` 目录作为 Vault 在 Obsidian 打开，编辑 template 并导出 PDF 文件即可。
+下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，将 `lapis-cv-obsidian` 目录作为 Vault 在 Obsidian 打开，编辑 template 并导出 PDF 文件即可。
 
 #### Typora
 
-1. 下载 Release，设置 Lapis CV 作为主题（将 lapis-cv.css 与 lapis-cv 目录放入主题文件夹并重启 Typora）。
+1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，设置 Lapis Cv 作为主题（将 lapis-cv.css 与 lapis-cv 目录放入主题文件夹，重启 Typora 并切换主题）。
 
 2. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
 
@@ -45,6 +45,8 @@
 - 二级标题：栏标题
 - 三级标题：栏内子标题
 - 分隔线：**分页标记**，导出 pdf 时将在每个分隔线处进行分页
+
+支持导出多页简历，使用分隔线进行标记，导出的 PDF 将在每个分割线处进行分页。
 
 ### 自定义样式
 

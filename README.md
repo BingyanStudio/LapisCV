@@ -33,9 +33,13 @@
 
 #### Typora
 
-1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，设置 Lapis Cv 作为主题（将 lapis-cv.css 与 lapis-cv 目录放入主题文件夹，重启 Typora 并切换主题）。
-
-2. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
+1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，设置 Lapis Cv 作为主题：
+   
+    1. 在 Typora 菜单中选择 偏好设置 (Preferences) -> 找到外观部分，点击“打开主题文件夹”按钮
+    2. 将 lapis-cv.css 和 lapis-cv 文件夹复制到 Typora 的主题文件夹中
+    3. 重启 Typora，然后从主题列表中选择 Lapis Cv
+    
+3. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
 
 ### 格式
 

@@ -25,7 +25,7 @@
 </div>
 </div>
 
-- [PDF样例](.assets/preview.pdf)
+- [PDF样例](https://raw.githubusercontent.com/BingyanStudio/LapisCV/main/.assets/preview.png)
 
 <br>
 <div align="center">
@@ -51,13 +51,15 @@
 ### 格式
 
 - 一级标题：姓名块
-- 引用块：联系方式块
-- `<img alt="avatar">`：头像，不带头像删除该行即可
 - 二级标题：栏标题
 - 三级标题：栏内子标题
-- 分隔线：**分页标记**，导出 pdf 时将在每个分隔线处进行分页
-
-支持导出多页简历，使用分隔线进行标记，导出的 PDF 将在每个分割线处进行分页。
+- 引用块：联系方式块
+- 分隔线：**分页标记**
+  
+  支持导出多页简历，使用分隔线进行标记，导出的 PDF 将在每个分割线处进行分页。
+- `<img alt="avatar" src="...">`：头像，编辑头像时替换 src 图片路径即可，不带头像可删除该行
+  
+> Obsidian 无法识别 html 格式的本地图片插入，因此推荐将图片上传到图床上（Github也可充当图床），再放入图片链接
 
 ### 自定义样式
 

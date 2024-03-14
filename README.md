@@ -4,6 +4,13 @@
 <p align="center">
     📃 开箱即用的 Obsidian / Typora 简历
 </p>
+<div align="center">
+    <img alt="Release" src="https://img.shields.io/github/v/release/BingyanStudio/LapisCV?style=flat-square">
+    &nbsp;
+    <img alt="Stars" src="https://img.shields.io/github/stars/BingyanStudio/LapisCV?style=flat-square">
+    &nbsp;
+    <img alt="Downloads" src="https://img.shields.io/github/downloads/BingyanStudio/LapisCV/total?style=flat-square&color=007ec7">  
+</div><br>
 
 基于 Markdown 格式，易于编辑，所见即所得。风格简洁正式，适用于大部分求职 / 求学场景。
 

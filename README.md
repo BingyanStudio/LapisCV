@@ -12,7 +12,7 @@
     <img alt="Downloads" src="https://img.shields.io/github/downloads/BingyanStudio/LapisCV/total?style=flat-square&color=007ec7">  
 </div><br>
 
-基于 Markdown 格式，易于编辑，所见即所得。风格简洁正式，适用于大部分求职 / 求学场景。
+基于 Markdown 格式，易于编辑，所见即所得。风格简洁正式，支持多页，适用于大部分求职 / 求学场景。
 
 ### 预览
 
@@ -25,7 +25,7 @@
 </div>
 </div>
 
-- [PDF样例](https://raw.githubusercontent.com/BingyanStudio/LapisCV/main/.assets/preview.png)
+- [PDF样例](https://raw.githubusercontent.com/BingyanStudio/LapisCV/main/.assets/preview.pdf)
 
 <br>
 <div align="center">
@@ -56,10 +56,9 @@
 - 引用块：联系方式块
 - 分隔线：**分页标记**
   
-  支持导出多页简历，使用分隔线进行标记，导出的 PDF 将在每个分割线处进行分页。
+  支持导出多页简历，可使用分隔线进行手动标记，导出的 PDF 会在分割线处进行一次分页。
 - `<img alt="avatar" src="...">`：头像，编辑头像时替换 src 图片路径即可，不带头像可删除该行
-  
-> Obsidian 无法识别 html 格式的本地图片插入，因此推荐将图片上传到图床上（Github也可充当图床），再放入图片链接
+> Obsidian 无法识别 html 格式的本地图片插入，因此推荐将图片上传为链接再插入
 
 ### 自定义样式
 

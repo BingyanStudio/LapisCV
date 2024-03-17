@@ -25,11 +25,12 @@ body {
   --font-text-size: 10pt;
   --h1-size: 15pt;
   --h2-size: 12pt;
-  --h3-size: 11pt;
+  --h3-size: 10.5pt;
 
   --h1-weight: bold;
   --h2-weight: bold;
   --h3-weight: bold;
+  --bold-weight: bold;
 
   --line-height: 1.8;
   --h1-line-height: 1;
@@ -153,10 +154,10 @@ h6,
 .HyperMD-header.HyperMD-header-5.cm-line,
 .HyperMD-header.HyperMD-header-4.cm-line,
 .HyperMD-header.HyperMD-header-3.cm-line {
-  font-size: 11pt;
+  font-size: 10.5pt;
   padding-top: 0;
-  margin-block-start: 1mm !important;
-  margin-block-end: 1mm !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
 }
 
 h3 a,
@@ -164,7 +165,7 @@ h4 a,
 h5 a,
 h6 a,
 .HyperMD-header span.cm-link {
-  font-size: 10.5pt;
+  font-size: 10pt;
 }
 
 /* List */

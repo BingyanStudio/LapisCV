@@ -6,13 +6,13 @@
 
 ## 基本信息
 
-- ### 八爪科技大学 - 本科 - 软件工程专业  (2008.02 - 2024.06)
+### 八爪科技大学 - 本科 - 软件工程专业   (2008.02 - 2024.06)
 
-  **曾获奖项：**GitHub 认证八爪编码员，敏捷章鱼实践者
+- **曾获奖项：** GitHub 认证八爪编码员，敏捷章鱼实践者
 
-  **校园经历：**担任 OctoStudio 队长，致力于推动服务于八爪生物的技术创新和项目开发。
+- **校园经历：** 担任 OctoStudio 队长，致力于推动服务于八爪生物的技术创新和项目开发。
 
-- **Github：** [github.com/octocat](https://github.com/octocat)   |  **个人博客：** [octocat.github.io](https://octocat.github.io)
+**Github：** [github.com/octocat](https://github.com/octocat)   |  **个人博客：** [octocat.github.io](https://octocat.github.io)
 
 ## 专业技能
 

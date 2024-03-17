@@ -12,7 +12,7 @@
 
     --text-color: #353a42;
     --primary-color: #4870ac;
-    --link-color: #0563c1;
+    --link-color: #4c91da;
     --shadow-color: #dae3eac9;
     --border-color: #dae3ea;
 
@@ -122,6 +122,17 @@
 #write p {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+@media print {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+    }
 }
 
 /* List */

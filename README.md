@@ -43,8 +43,9 @@
 #### 在已有Vault中使用
 
 1. 下载obsidian文件夹中`snippets`中的`lapis_resume.css`文件。
-2. 打开Obsidian，在`Appearance` -> `CSS snippets` 中，打开`CSS snippets`文件夹，放入第一步的 `resume.css`, 并启用该 `CSS snippet`。
+2. 打开Obsidian，在`Appearance` -> `CSS snippets` 中，打开`CSS snippets`文件夹，放入第一步的 `lapis_resume.css`, 并启用该 `CSS snippet`。
 3. 新建一个文件，在顶部的属性中添加一个`cssclasses=resume` 的属性，只有添加了这个属性的文件，才会应用简历样式。
+<img width="1352" alt="image" src="https://github.com/zhaohongxuan/LapisCV/assets/8613196/ee6ee604-fdb4-4d6a-8dc4-9b00e1f9ad85">
 
 
 ### Typora
@@ -57,7 +58,7 @@
     
 3. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
 
-### 格式
+## 格式
 
 - 一级标题：姓名块
 - 二级标题：栏标题
@@ -74,12 +75,12 @@
 
 支持自定义样式，便于适配不同体量的单页内容 & 根据喜好调整样式细节。
 
-#### Obsidian
+### Obsidian
 
 可在 设置 - 外观 中快速更换主题色与字体，其他样式在 `.obsidian/themes/lapis-cv.css` 修改。
 
 
-#### Typora
+### Typora
 
 修改主题文件夹中的 `lapis-cv.css` 并重启 Typora。
 

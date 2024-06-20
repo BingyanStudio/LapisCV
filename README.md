@@ -14,7 +14,7 @@
 
 基于 Markdown 格式，易于编辑，所见即所得。风格简洁正式，支持多页，适用于大部分求职 / 求学场景。
 
-### 预览
+## 预览
 
 - Obsidian / Typora 编辑页
 
@@ -32,13 +32,22 @@
 <img width="80%" alt="Screenshot" src=".assets/preview.png">
 </div>
 
-### 安装与使用
+## 安装与使用
 
-#### Obsidian
+### Obsidian
+
+#### 作为新Vault使用
 
 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，将 `lapis-cv-obsidian` 目录作为 Vault 在 Obsidian 打开，编辑 template 并导出 PDF 文件即可。
 
-#### Typora
+#### 在已有Vault中使用
+
+1. 下载obsidian文件夹中`snippets`中的`lapis_resume.css`文件。
+2. 打开Obsidian，在`Appearance` -> `CSS snippets` 中，打开`CSS snippets`文件夹，放入第一步的 `resume.css`, 并启用该 `CSS snippet`。
+3. 新建一个文件，在顶部的属性中添加一个`cssclasses=resume` 的属性，只有添加了这个属性的文件，才会应用简历样式。
+
+
+### Typora
 
 1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，设置 Lapis Cv 作为主题：
    
@@ -60,13 +69,15 @@
 - `<img alt="avatar" src="...">`：头像，编辑头像时替换 src 图片路径即可，不带头像可删除该行
 > Obsidian 无法识别 html 格式的本地图片插入，因此推荐将图片上传为链接再插入
 
-### 自定义样式
+
+## 自定义样式
 
 支持自定义样式，便于适配不同体量的单页内容 & 根据喜好调整样式细节。
 
 #### Obsidian
 
 可在 设置 - 外观 中快速更换主题色与字体，其他样式在 `.obsidian/themes/lapis-cv.css` 修改。
+
 
 #### Typora
 

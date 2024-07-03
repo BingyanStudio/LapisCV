@@ -6,7 +6,7 @@
 /* Custom Config */
 
 .resume {
-    --default-font: --font-interface-theme, ui-sans-serif, -apple-system
+    --default-font: var(--font-interface-theme),  "Source Han Sans CN", "Inter", ui-sans-serif, -apple-system;
     --font-monospace: "JetBrains Mono", "Source Code Pro", monospace;
     --link-font: var( --default-font);
 
@@ -47,6 +47,7 @@
     @media print {
         body {
             --file-margins: 0mm 15mm 0 15mm;
+            color: var(--text-normal);
         }
 
         @page {
@@ -62,9 +63,6 @@
             page-break-after: avoid;
         }
 
-        .print .markdown-preview-view {
-            color: var(--text-normal);
-        }
     }
 
     /* Global */
@@ -245,8 +243,8 @@
 
     @media print {
         img[alt="avatar"] {
-            top: 17mm;
-            right: 8mm;
+            top: 25mm;
+            right: 1mm;
         }
     }
 
@@ -267,6 +265,7 @@
         line-height: 1.6;
         border-left: none;
         text-align: center;
+        border-inline-start: none
     }
 
     :before {

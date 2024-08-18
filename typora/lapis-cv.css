@@ -100,7 +100,7 @@
 #write h4,
 #write h5,
 #write h6 {
-    font-size: var(--h3-size) - 0.5pt;
+    font-size: var(--h3-size);
 }
 
 #write h3 a,
@@ -108,7 +108,7 @@
 #write h5 a,
 #write h6 a {
     font-weight: normal;
-    font-size: var(--h3-size);
+    font-size: var(--h3-size) - 0.5pt;
 }
 
 #write .md-math-block,

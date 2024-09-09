@@ -2,7 +2,7 @@
     LapisCV
 </h1>
 <p align="center">
-    📃 开箱即用的 Obsidian / Typora 简历
+    📃 开箱即用的 Obsidian / Typora / VSCode 简历
 </p>
 <div align="center">
     <img alt="Release" src="https://img.shields.io/github/v/release/BingyanStudio/LapisCV?style=flat-square">
@@ -47,6 +47,12 @@
     3. 重启 Typora，然后从主题列表中选择 Lapis Cv
     
 3. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
+
+#### VSCode
+
+1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest) 并解压至某一文件夹。
+2. 在 VSCode 中打开该文件夹，并安装插件 [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)。
+3. 打开模版文件 [template.md](vscode/template.md) 进行内容编辑，右键选择 Markdown PDF - Export (pdf) 即可导出 PDF 文件。
 
 ### 格式
 

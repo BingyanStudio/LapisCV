@@ -111,3 +111,7 @@
     }
 }
 ```
+
+#### VSCode
+
+修改 `lapis-cv.css` 即可。具体样式可参考上述 Typora 部分。

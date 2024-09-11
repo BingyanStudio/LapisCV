@@ -54,7 +54,12 @@ body {
   font-size: var(--text-size);
   line-height: var(--line-height);
   font-family: var(--text-font) !important;
-  color: var(--text-color);
+}
+
+@media print {
+  body {
+    color: var(--text-color);
+  }
 }
 
 @media screen {
@@ -219,9 +224,21 @@ a {
 /* Code */
 
 code {
-  background-color: var(--bg-color);
   font-family: var(--code-font);
-  color: unset !important;
+}
+
+@media screen {
+  code {
+    background-color: unset !important;
+    color: unset !important;
+  }
+}
+
+@media print {
+  code {
+    background-color: var(--bg-color);
+    color: var(--text-color) !important;
+  }
 }
 
 /* Block Quote */

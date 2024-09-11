@@ -115,3 +115,10 @@
 #### VSCode
 
 修改 `lapis-cv.css` 即可。具体样式可参考上述 Typora 部分。
+
+但页边距需要在 VSCode 设置中修改：
+
+1. 打开 VSCode 设置，选中 Workspace 标签页。
+2. 搜索 Markdown-pdf › Margin，并修改四边边距。<br>
+   另外的，还可以直接修改 .vscode/settings.json 文件中的 markdown-pdf.margin 项。
+3. 无需重启 VSCode，重新生成 PDF 即可生效。

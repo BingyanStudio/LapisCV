@@ -54,6 +54,8 @@
 2. 在 VSCode 中打开该文件夹，并安装插件 [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)。
 3. 打开模版文件 [template.md](vscode/template.md) 进行内容编辑，右键选择 Markdown PDF - Export (pdf) 即可导出 PDF 文件。
 
+需要注意，VSCode 中安装的其他插件可能会影响预览显示效果，若预览效果与生成 PDF 中效果不一致，请检查是否有插件影响。
+
 ### 格式
 
 - 一级标题：姓名块
@@ -118,7 +120,11 @@
 
 但页边距需要在 VSCode 设置中修改：
 
-1. 打开 VSCode 设置，选中 Workspace 标签页。
-2. 搜索 Markdown-pdf › Margin，并修改四边边距。<br>
-   另外的，还可以直接修改 .vscode/settings.json 文件中的 markdown-pdf.margin 项。
-3. 无需重启 VSCode，重新生成 PDF 即可生效。
+- 直接修改 .vscode/settings.json 文件中的 markdown-pdf.margin 相关项。
+
+- 另外的，还可以通过 GUI 进行修改：
+
+    1. 打开 VSCode 设置，选中 Workspace 标签页。
+    2. 搜索 Markdown-pdf › Margin，并修改四边边距。
+
+无需重启 VSCode，重新生成 PDF 即可生效。

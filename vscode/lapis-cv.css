@@ -1,0 +1,270 @@
+/* 
+ *   VSCode Theme - Lapis CV  /  Modified by GoForceX
+ *   Modified from Typora Theme / Original Author - YiNN (BingyanStudio)
+ *   https://github.com/BingyanStudio/LapisCV
+ */
+
+/* Custom Config */
+
+:root {
+  --text-size: 10pt;
+  --line-height: 1.8;
+  --avatar-width: 29mm;
+
+  --text-color: #353a42;
+  --primary-color: #4870ac;
+  --link-color: #4c91da;
+  --shadow-color: #dae3eac9;
+  --border-color: #dae3ea;
+  --bg-color: #fff;
+
+  --h1-size: 16pt;
+  --h2-size: 12pt;
+  --h3-size: 10.5pt;
+
+  --text-font: "SourceHanSansCN";
+  --title-font: "SourceHanSansCN";
+  --link-font: "JetBrainsMono";
+  --code-font: "JetBrainsMono";
+}
+
+/* Font Face */
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("./lapis-cv/JetBrainsMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: "SourceHanSansCN";
+  src: url("./lapis-cv/SourceHanSansCN-Regular.otf");
+}
+
+@font-face {
+  font-family: "SourceHanSansCN";
+  src: url("./lapis-cv/SourceHanSansCN-Bold.otf");
+  font-weight: bold;
+}
+
+/* Global */
+
+body {
+  max-width: 224mm;
+  text-align: justify;
+  font-size: var(--text-size);
+  line-height: var(--line-height);
+  font-family: var(--text-font) !important;
+}
+
+@media print {
+  body {
+    color: var(--text-color);
+  }
+}
+
+@media screen {
+  body {
+    box-shadow: 0 0 4mm 0 var(--shadow-color);
+    padding-left: 20mm;
+    padding-right: 20mm;
+    padding-top: 12mm;
+    padding-bottom: 12mm;
+    margin: 0 auto;
+  }
+}
+
+/* Title */
+
+h1,
+h2,
+h3 {
+  font-family: var(--title-font);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: var(--h1-size);
+  line-height: 1.5;
+  border-bottom: 0;
+}
+
+h1,
+blockquote {
+  text-align: center;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: var(--h2-size);
+  border-bottom: 1px solid var(--primary-color);
+  margin-top: 2.4mm;
+  margin-bottom: 2mm;
+  line-height: 1;
+  padding: 1mm 0;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--h3-size);
+}
+
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: normal;
+  font-size: var(--h3-size) - 0.5pt;
+}
+
+.md-math-block,
+.md-rawblock,
+h1,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media print {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+}
+
+/* List */
+
+ul {
+  list-style-type: "\2022";
+  padding-inline-start: 3mm;
+  padding-inline-end: 1mm;
+}
+
+ol {
+  padding-inline-start: 5mm;
+  padding-inline-end: 1mm;
+}
+
+ol li {
+  padding-left: 0;
+}
+
+ol,
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+li {
+  padding-left: 1.5mm;
+}
+
+ul ::marker {
+  font-weight: bolder;
+}
+
+ol ::marker {
+  font-weight: normal;
+}
+
+/* Avatar */
+
+img[alt="avatar"] {
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  float: right;
+  object-fit: cover;
+  overflow: hidden;
+
+  width: var(--avatar-width);
+  height: var(--avatar-width);
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 0 3mm var(--bg-color);
+}
+
+p:has(img[alt="avatar"]) {
+  height: 0;
+  text-align: center;
+}
+
+@media screen {
+  img[alt="avatar"] {
+    position: relative;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 0 3mm var(--vscode-editor-background);
+  }
+}
+
+@media print {
+  img[alt="avatar"] {
+    top: 18mm;
+    right: 6mm;
+  }
+}
+
+/* Link */
+
+a {
+  color: var(--link-color);
+  font-family: var(--link-font);
+  text-decoration: none;
+}
+
+/* Code */
+
+code {
+  font-family: var(--code-font);
+}
+
+@media screen {
+  code {
+    background-color: unset !important;
+    color: unset !important;
+  }
+}
+
+@media print {
+  code {
+    background-color: var(--bg-color);
+    color: var(--text-color) !important;
+  }
+}
+
+/* Block Quote */
+
+blockquote {
+  line-height: 1.6;
+  background: unset !important;
+  border-left-width: unset;
+  border-left-style: unset;
+}
+
+/* Horizontal Line */
+
+hr {
+  border-top: 2px solid var(--shadow-color);
+  margin: 15mm 0 12mm 0;
+}
+
+@media print {
+  hr {
+    page-break-after: always;
+    margin: 0;
+    visibility: hidden;
+  }
+}

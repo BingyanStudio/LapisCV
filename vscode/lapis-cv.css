@@ -203,8 +203,9 @@ p:has(img[alt="avatar"]) {
 
 @media screen {
   img[alt="avatar"] {
-    top: 18mm;
-    right: 10mm;
+    position: relative;
+    top: 0;
+    right: 0;
     box-shadow: 0 0 0 3mm var(--vscode-editor-background);
   }
 }

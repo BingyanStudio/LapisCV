@@ -1,6 +1,6 @@
 {
     "markdown.styles": [
-        "./vscode/lapis-cv.css"
+        "./lapis-cv.css"
     ],
     "markdown-pdf.headerTemplate": "",
     "markdown-pdf.footerTemplate": "",

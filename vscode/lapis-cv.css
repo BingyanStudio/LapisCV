@@ -68,6 +68,8 @@ body {
     padding-left: 20mm;
     padding-right: 20mm;
     padding-top: 12mm;
+    padding-bottom: 12mm;
+    margin: 0 auto;
   }
 }
 
@@ -201,8 +203,9 @@ p:has(img[alt="avatar"]) {
 
 @media screen {
   img[alt="avatar"] {
-    top: 1mm;
-    right: 0;
+    top: 18mm;
+    right: 10mm;
+    box-shadow: 0 0 0 3mm var(--vscode-editor-background);
   }
 }
 

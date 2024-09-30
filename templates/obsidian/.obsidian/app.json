@@ -8,5 +8,6 @@
   },
   "strictLineBreaks": false,
   "readableLineLength": false,
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "spellcheck": false
 }

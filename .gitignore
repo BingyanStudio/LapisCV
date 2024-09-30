@@ -3,5 +3,6 @@
 plugins
 core-plugins.json
 community-plugins.json		
-core-plugins-migration.json	
+core-plugins-migration.json
 workspace.json
+build

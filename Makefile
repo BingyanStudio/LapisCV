@@ -7,13 +7,17 @@ OBSIDIAN_TEMPLATE_DIR = templates/obsidian/
 TYPORA_TEMPLATE_DIR = templates/typora/
 VSCODE_TEMPLATE_DIR = templates/vscode/
 
-OBSIDIAN_FILES = styles/obsidian.css $(OBSIDIAN_DIR)/.obsidian/themes/lapis-cv.css
+OBSIDIAN_FILES = styles/font.css $(OBSIDIAN_DIR)/.obsidian/snippets/font.css \
+                 styles/obsidian.css $(OBSIDIAN_DIR)/.obsidian/snippets/lapis-cv.css \
+                 styles/main.css $(OBSIDIAN_DIR)/.obsidian/snippets/main.css
 
-TYPORA_FILES = fonts $(TYPORA_DIR)/lapis-cv \
-               styles/typora.css $(TYPORA_DIR)/lapis-cv.css
+TYPORA_FILES = styles/typora.css $(TYPORA_DIR)/lapis-cv.css \
+			   styles/main.css $(TYPORA_DIR)/lapis-cv/styles/main.css \
+			   styles/font.css $(TYPORA_DIR)/lapis-cv/styles/font.css
 
-VSCODE_FILES = fonts $(VSCODE_DIR)/lapis-cv \
-               styles/vscode.css $(VSCODE_DIR)/lapis-cv.css
+VSCODE_FILES = styles/vscode.css $(VSCODE_DIR)/lapis-cv.css \
+               styles/main.css $(VSCODE_DIR)/lapis-cv/styles/main.css \
+               styles/font.css $(VSCODE_DIR)/lapis-cv/styles/font.css
 
 all: obsidian typora vscode
 

@@ -1,0 +1,9 @@
+{
+  "accentColor": "#4870ac",
+  "enabledCssSnippets": [
+    "lapiscv-font",
+    "lapiscv-obsidian",
+    "lapiscv-main"
+  ],
+  "baseFontSize": 14
+}

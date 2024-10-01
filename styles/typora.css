@@ -1,27 +1,32 @@
 /* 
- *   Typora Theme - Lapis CV  /  Author - YiNN (BingyanStudio)
+ *   Lapis CV  /  Author - YiNN (BingyanStudio)
  *   https://github.com/BingyanStudio/LapisCV
  */
 
 @import "lapis-cv/styles/main.css";
 @import "lapis-cv/styles/font.css";
 
-@media screen {
-    #write {
-        max-width: 224mm;
-        box-shadow: 0 0 4mm 0 #dae3eac9;
-        padding-left: 20mm;
-        padding-right: 20mm;
-        padding-top: 12mm;
-    }
-}
-
 @media print {
     @page {
+        /* Typora Print Margin - <up> <right> <down> <left> */
         margin: 12mm 6mm 0 6mm;
     }
 }
 
+@media screen {
+    #write {
+        top: 10mm;
+        max-width: 224mm;
+        box-shadow: 0 0 4mm 0 #dae3eac9;
+        padding-left: 20mm;
+        padding-right: 20mm;
+        padding-top: 13mm;
+    }
+
+    ::before {
+        color: var(--color-accent);
+    }
+}
 
 @media screen {
     img[alt="avatar"] {

@@ -1,0 +1,158 @@
+/* 
+ *   Lapis CV  /  Author - YiNN (BingyanStudio)
+ *   https://github.com/BingyanStudio/LapisCV
+ */
+
+/* Custom Config */
+
+.lapis-cv {
+  /* Obsidian Print Margin - <up> <right> <down> <left> */
+  --file-margins: 13mm 15mm 12mm 15mm;
+
+  --link-external-color: var(--text-accent-hover);
+  --link-external-decoration: var(--background-primary);
+  --link-external-filter: brightness(1.3) hue-rotate(-10deg);
+  --text-accent: var(--link-color);
+  --text-accent-hover: var(--link-color);
+  --p-spacing: 0;
+  --heading-spacing: 0;
+  --list-spacing: 0;
+  --list-indent-editing: 0;
+  --list-indent: 2.5mm;
+  --file-line-width: 224mm;
+  --metadata-padding: 1mm 0 6mm 0;
+  --metadata-display-editing: flex;
+}
+
+/* Global */
+
+@media screen {
+  .lapis-cv {
+    --file-margins: 0 15mm 0 15mm;
+  }
+}
+
+.lapis-cv {
+  .cm-line {
+    line-height: 1.8;
+  }
+
+  .cm-sizer {
+    margin: auto;
+    max-width: 224mm;
+    padding: 0;
+  }
+
+  .cm-contentContainer {
+    box-shadow: 0 0 4mm 0 #dae3eac9;
+    padding-left: 20mm;
+    padding-right: 20mm;
+    padding-top: 13mm;
+  }
+
+  .metadata-properties-title {
+    margin: 0 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .metadata-container .metadata-add-button {
+    margin-top: 0;
+  }
+
+  .metadata-properties {
+    flex-direction: row;
+  }
+
+  .metadata-content {
+    display: flex;
+  }
+
+  .metadata-properties-heading {
+    margin-bottom: 0;
+  }
+
+  .metadata-container {
+    font-size: 90%;
+    line-height: 1;
+  }
+
+  .markdown-source-view.is-live-preview.show-properties .metadata-container {
+    justify-content: center;
+  }
+
+  .cm-line:has(br) {
+    height: 0;
+  }
+
+  /* Title */
+
+  .inline-title {
+    visibility: hidden;
+  }
+
+  .HyperMD-header.HyperMD-header-1.cm-line {
+    line-height: var(--h1-line-height);
+    text-align: center;
+    margin-block-start: 0 !important;
+    margin-block-end: 1.4mm !important;
+    padding-bottom: 1mm;
+  }
+
+  .HyperMD-header.HyperMD-header-2.cm-line {
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-accent);
+    line-height: 1;
+    padding: 1mm 0;
+    margin-block-start: 2mm !important;
+    margin-block-end: 2.3mm !important;
+  }
+
+  .HyperMD-header.HyperMD-header-6.cm-line,
+  .HyperMD-header.HyperMD-header-5.cm-line,
+  .HyperMD-header.HyperMD-header-4.cm-line,
+  .HyperMD-header.HyperMD-header-3.cm-line {
+    padding-top: 0;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+  }
+
+  .cm-formatting-list {
+    padding-right: 2.2mm;
+  }
+
+  /* Avatar */
+
+  .cm-line:has(img[alt="avatar"]) {
+    height: 0;
+    text-align: center;
+  }
+
+  @media print {
+    img[alt="avatar"] {
+      position: absolute;
+      top: 31mm;
+      right: 15mm;
+    }
+  }
+
+  /* Block Quote */
+
+  blockquote p,
+  .markdown-rendered blockquote,
+  .HyperMD-quote.cm-line {
+    line-height: 1.6;
+    border-left: none;
+    text-align: center;
+  }
+
+  :before {
+    visibility: hidden;
+  }
+
+  /* Horizontal Line */
+
+  .hr,
+  hr {
+    padding: 25mm 0 0mm 0 !important;
+  }
+}

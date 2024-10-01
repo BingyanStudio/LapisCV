@@ -6,8 +6,12 @@
 /* Custom Config */
 
 body {
+  /* Obsidian Print Margin - <up> <right> <down> <left> */
+  --file-margins: 13mm 15mm 12mm 15mm;
+
   --link-external-color: var(--text-accent-hover);
   --link-external-decoration: var(--background-primary);
+  --link-external-filter: brightness(1.3) hue-rotate(-10deg);
   --text-accent: var(--link-color);
   --text-accent-hover: var(--link-color);
   --p-spacing: 0;
@@ -16,16 +20,6 @@ body {
   --list-indent-editing: 0;
   --list-indent: 2.5mm;
   --file-line-width: 224mm;
-}
-
-@media print {
-  body {
-    --file-margins: 0mm 15mm 0 15mm;
-  }
-
-  @page {
-    margin: 13mm 0 12mm 0;
-  }
 }
 
 /* Global */
@@ -92,20 +86,13 @@ body {
   text-align: center;
 }
 
-@media screen {
-  img[alt="avatar"] {
-    top: 4mm;
-    right: 0;
-  }
-}
-
 @media print {
   img[alt="avatar"] {
-    top: 17mm;
-    right: 8mm;
+    position: absolute;
+    top: 31mm;
+    right: 15mm;
   }
 }
-
 
 /* Block Quote */
 

@@ -1,3 +1,8 @@
+---
+cssclasses:
+  - lapis-cv
+---
+
 # 八爪猫
 
 > 电话：`(123)456-7890`       邮箱：`octocat@github.com`

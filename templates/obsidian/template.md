@@ -1,10 +1,9 @@
 # 八爪猫
-
-> 电话：`(123)456-7890`       邮箱：`octocat@github.com`
+> `(123)456-7890`  &emsp;&emsp;   `octocat@github.com`
 
 <img src="https://avatars.githubusercontent.com/u/583231?v=4" class="avatar">
 
-## 基本信息
+##  基本信息
 
 ### 八爪科技大学 - 本科 - 软件工程专业   (2008.02 - 2024.06)
 
@@ -14,14 +13,14 @@
 
 Github： [github.com/octocat](https://github.com/octocat)   |  个人博客： [octocat.github.io](https://octocat.github.io)
 
-## 专业技能
+##  专业技能
 
 - 熟练掌握多种编程语言，包括 Octolang，OctoScript 等，对面向对象和函数式编程范式有很好的理解，专注于编写清晰，高效，可维护的代码。
 - 出色的沟通和语言能力，无论八爪生物抑或来自不同地区的猫，都能进行有效的团队合作和清晰概念沟通。
 - 扎实的软件开发原理，数据结构和算法理解，熟悉计算机底层原理。
 - 在版本控制方面有丰富的经验，熟练管理代码库、解决合并冲突，并促进代码审议。
 
-## 工作经验
+##  工作经验
 
 <div style="display: flex; justify-content: space-between;">
     <h3>软件开发实习生 - 八爪科技</h3> <p style="text-align: right">2008.06 - 2008.08</p>
@@ -31,7 +30,7 @@ Github： [github.com/octocat](https://github.com/octocat)   |  个人博客： 
 - 参与会议和代码审议，按照敏捷章鱼论交付高质量的软件，在紧迫的截止日期内完成任务。
 - 协助解决技术问题，展现解决问题的技巧和在快节奏环境下积极主动解决挑战的态度。 为项目需求、架构设计和编码标准的文档撰写做出贡献，促进团队成员间的知识共享和新成员的快速适应。
 
-## 项目经历
+##  项目经历
 
 ### GitFlix - [github.com/octocat/gitflix](https://github.com/octocat/gitflix)
 

@@ -1,5 +1,5 @@
 /* 
- *   Lapis CV - Slim  /  Author - YiNN (BingyanStudio)
+ *   Lapis CV Serif  /  Author - YiNN (BingyanStudio)
  *   https://github.com/BingyanStudio/LapisCV
  */
 
@@ -55,6 +55,9 @@ li {
         padding-left: 20mm;
         padding-right: 20mm;
         padding-top: 15mm;
+    }
+    ::before {
+        color: var(--color-accent);
     }
 }
 

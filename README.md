@@ -28,24 +28,11 @@
 
 - LapisCV Serif：
 
-<div style="display:flex;justify-content:space-between;align-items:center;">
-    <img src=".assets/image-20241008031125846.png" alt="image" style="zoom:35%;filter: drop-shadow(#cccccc 0px 18px 18px);"/>
-    <img src=".assets/image-20241008020816718.png" alt="image" style="zoom:35%;filter: drop-shadow(#cccccc 0px 18px 18px);"/>
-</div>
-
-
-
-</div>
-
+![image](https://github.com/user-attachments/assets/df89302d-be47-4c2c-b9fc-f41d8c9ad3fb)
 
 - LapisCV：
 
-<div style="display:flex;justify-content:space-between;align-items:center;">
-    <img src=".assets/image-20241008032109316.png" alt="image" style="zoom:35%;filter: drop-shadow(#cccccc 0px 18px 18px);"/>
-    <img src=".assets/image-20241008021358038.png" alt="image" style="zoom:35%;filter: drop-shadow(#cccccc 0px 18px 18px);"/>
-</div>
-
-<br>
+![image](https://github.com/user-attachments/assets/f6d3da7b-c324-4061-9801-70532f983ccd)
 
 ### 安装与使用
 

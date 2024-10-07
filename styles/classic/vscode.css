@@ -1,0 +1,51 @@
+/* 
+ *   Lapis CV  /  Author - GoForceX, YiNN
+ *   https://github.com/BingyanStudio/LapisCV
+ */
+
+@media screen {
+    body {
+        box-shadow: 0 0 4mm 0 #dae3eac9;
+        padding-left: 20mm;
+        padding-right: 20mm;
+        padding-top: 13mm;
+        padding-bottom: 22mm;
+        margin: 8mm auto;
+    }
+
+    p,
+    li,
+    h1,
+    h3,
+    h4,
+    h5,
+    h6,
+    blockquote,
+    blockquote a,
+    strong {
+        color: unset !important;
+    }
+}
+
+.avatar,
+img[alt="avatar"] {
+    top: -1mm;
+    right: -2mm;
+}
+
+@media screen {
+    code {
+        background-color: unset !important;
+        color: unset !important;
+    }
+}
+
+blockquote {
+    background: unset !important;
+    border-left-width: unset;
+    border-left-style: unset;
+}
+
+hr {
+    border: none;
+}

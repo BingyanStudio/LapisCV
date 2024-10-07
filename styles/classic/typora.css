@@ -1,0 +1,47 @@
+/* 
+ *   Lapis CV  /  Author - YiNN (BingyanStudio)
+ *   https://github.com/BingyanStudio/LapisCV
+ */
+
+@import "lapis-cv/styles/main.css";
+@import "lapis-cv/styles/font.css";
+
+@media print {
+    @page {
+        /* Typora Print Margin - <up> <right> <down> <left> */
+        margin: 12mm 6mm 0 6mm;
+    }
+}
+
+@media screen {
+    #write {
+        top: 10mm !important;
+        max-width: 224mm;
+        box-shadow: 0 0 4mm 0 #dae3eac9;
+        padding-left: 20mm;
+        padding-right: 20mm;
+        padding-top: 13mm;
+    }
+
+    ::before {
+        color: var(--color-accent);
+    }
+}
+
+@media screen {
+
+    .avatar,
+    img[alt="avatar"] {
+        top: 1mm;
+        right: 0;
+    }
+}
+
+@media print {
+
+    .avatar,
+    img[alt="avatar"] {
+        top: 3mm;
+        right: 0;
+    }
+}

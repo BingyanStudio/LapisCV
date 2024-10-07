@@ -5,12 +5,13 @@
 
 /* Custom Config */
 
-:root, body {
+:root,
+body {
     --text-size: 10pt;
     --line-height: 1.8;
     --avatar-width: 29mm;
 
-    --color-accent: hsl(216,41%,48%);
+    --color-accent: rgb(72, 112, 173);
     --text-normal: #353a42;
     --border-color: #dae3ea;
     --h2-color: var(--color-accent);
@@ -60,7 +61,7 @@ blockquote p {
 h2 {
     color: var(--h2-color);
     font-size: var(--h2-size);
-    border-bottom: 1px solid var(--color-accent);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-accent), rgb(0 0 0 / 0) 60%);
     margin-top: 2.4mm !important;
     margin-bottom: 1.9mm !important;
     line-height: var(--h2-line-height);
@@ -148,6 +149,7 @@ ol ::marker {
 
 /* Avatar */
 
+.avatar,
 img[alt="avatar"] {
     display: block;
     position: relative;
@@ -163,11 +165,14 @@ img[alt="avatar"] {
     border-radius: 50%;
     border: 2px solid var(--border-color);
     box-shadow: 0 0 0 3mm var(--background-primary);
+    margin: 3mm;
 }
 
-p:has(img[alt="avatar"]) {
+p:has(.avatar, img[alt="avatar"]) {
     height: 0;
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 /* Link */
@@ -189,8 +194,26 @@ code {
 
 /* Block Quote */
 
-blockquote {
+blockquote,
+blockquote * {
     line-height: 1.6;
+    padding: 0;
+}
+
+blockquote a {
+    color: var(--text-normal);
+}
+
+/* Custom Class */
+
+.entry-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon, span[alt="icon"]  {
+    color: var(--color-accent);
 }
 
 /* Horizontal Line */

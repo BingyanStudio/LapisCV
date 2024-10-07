@@ -1,3 +1,8 @@
+/* 
+ *   Lapis CV - Slim /  Author - GoForceX, YiNN
+ *   https://github.com/BingyanStudio/LapisCV
+ */
+
 /* Font Face */
 
 @font-face {
@@ -92,6 +97,7 @@ h2 {
     font-size: 13pt;
     line-height: 1;
     padding: 1.2mm 0;
+    border-bottom: 1px solid #a2b6d4;
 }
 
 h3,
@@ -112,8 +118,8 @@ img[alt="avatar"] {
     border: none;
     width: 24mm;
     height: 24mm;
-    margin-top: -29mm;
-    right: 2mm;
+    margin-top: -29mm !important;
+    right: 1mm;
 }
 
 blockquote {

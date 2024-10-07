@@ -50,6 +50,7 @@ body {
 }
 
 .HyperMD-header.HyperMD-header-1.cm-line {
+    color: var(--text-normal);
     line-height: var(--h1-line-height);
     text-align: center;
     margin-block-start: 0 !important;
@@ -59,7 +60,7 @@ body {
 
 .HyperMD-header.HyperMD-header-2.cm-line {
     color: var(--color-accent);
-    border-bottom: 1px solid var(--color-accent);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-accent), rgb(0 0 0 / 0) 60%);
     line-height: 1;
     padding: 1mm 0;
     margin-block-start: 2mm !important;
@@ -70,6 +71,7 @@ body {
 .HyperMD-header.HyperMD-header-5.cm-line,
 .HyperMD-header.HyperMD-header-4.cm-line,
 .HyperMD-header.HyperMD-header-3.cm-line {
+    color: var(--text-normal);
     padding-top: 0;
     margin-block-start: 0 !important;
     margin-block-end: 0 !important;

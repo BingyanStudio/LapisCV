@@ -11,14 +11,6 @@ body {
     --line-height: 1.8;
     --avatar-width: 29mm;
 
-    --color-accent: rgb(72, 112, 173);
-    --text-normal: #353a42;
-    --border-color: #dae3ea;
-    --h2-color: var(--color-accent);
-    --link-color: var(--color-accent);
-    --background-primary: #fff;
-    --code-background: var(--background-primary);
-
     --h1-size: 16pt;
     --h2-size: 12pt;
     --h3-size: 10.5pt;
@@ -27,13 +19,24 @@ body {
     --h1-line-height: 1.5;
     --h2-line-height: 1;
     --h3-line-height: 1.8;
+
+    --text-normal: #353a42;
+    --color-accent: rgb(72, 112, 173);
+    --border-color: #dae3ea;
+    --background-primary: #fff;
+    --code-background: var(--background-primary);
+
+    --h1-color: var(--text-normal);
+    --h2-color: var(--color-accent);
+    --h3-color: var(--text-normal);
+    --h4-color: var(--text-normal);
+    --link-color: var(--color-accent);
 }
 
 /* Text */
 
 p,
 li {
-    text-align: justify;
     font-size: var(--text-size);
     line-height: var(--line-height);
     color: var(--text-normal);
@@ -49,6 +52,7 @@ h3 {
 
 h1 {
     font-size: var(--h1-size);
+    color: var(--h1-color);
     line-height: var(--h1-line-height);
     border-bottom: 0;
 }
@@ -72,6 +76,7 @@ h3,
 h4,
 h5,
 h6 {
+    color: var(--h3-color);
     line-height: var(--h3-line-height);
     font-size: var(--h3-size);
 }
@@ -165,7 +170,7 @@ img[alt="avatar"] {
     border-radius: 50%;
     border: 2px solid var(--border-color);
     box-shadow: 0 0 0 3mm var(--background-primary);
-    margin: 3mm;
+    margin: 0 0 0 3mm !important;
 }
 
 p:has(.avatar, img[alt="avatar"]) {

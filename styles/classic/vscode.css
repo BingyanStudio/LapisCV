@@ -25,19 +25,22 @@
     strong {
         color: unset !important;
     }
+
+    code {
+        background-color: unset !important;
+        color: unset !important;
+    }
+
+    .avatar,
+    img[alt="avatar"] {
+        box-shadow: 0 0 0 3mm var(--vscode-editor-background);
+    }
 }
 
 .avatar,
 img[alt="avatar"] {
     top: -1mm;
     right: -2mm;
-}
-
-@media screen {
-    code {
-        background-color: unset !important;
-        color: unset !important;
-    }
 }
 
 blockquote {
@@ -48,4 +51,8 @@ blockquote {
 
 hr {
     border: none;
+}
+
+h2 {
+    border-bottom: 1px solid #a2b6d4;
 }

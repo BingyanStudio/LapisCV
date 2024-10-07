@@ -11,49 +11,67 @@
     &nbsp;
     <img alt="Downloads" src="https://img.shields.io/github/downloads/BingyanStudio/LapisCV/total?style=flat-square&color=5e76c3">  
 </div><br>
+基于 Markdown 格式并支持 VSCode / Typora / Obsidian 三个主流 Markdown 编辑器，实时渲染即时编辑，使得编写简历时不再需要关心任何格式、排版或语法，只需专注简历内容本身。
 
-基于 Markdown 格式，易于编辑，所见即所得。风格简洁正式，支持多页，适用于大部分求职 / 求学场景。
-
-### 预览
-
-- 编辑页
+提供两种主题，风格简洁正式，支持多页，适用于大部分求职 / 求学场景。
 
 <div align="center">
 <div>
-<img src=".assets/screenshot-obsidian.png" width="90%" />
+<img src=".assets/screenshot-obsidian.png" width="75%" />
 </div>
 </div>
 
-- [PDF样例](https://raw.githubusercontent.com/BingyanStudio/LapisCV/main/.assets/preview.pdf)
+
+### 预览
+
+提供两种主题，LapisCV 与 LapisCV Serif
+
+- LapisCV Serif：
+
+<div style="display:flex;justify-content:space-between;align-items:center;">
+    <img src=".assets/image-20241008031125846.png" alt="image" style="zoom:35%;filter: drop-shadow(#cccccc 0px 18px 18px);"/>
+    <img src=".assets/image-20241008020816718.png" alt="image" style="zoom:35%;filter: drop-shadow(#cccccc 0px 18px 18px);"/>
+</div>
+
+
+
+</div>
+
+
+- LapisCV：
+
+<div style="display:flex;justify-content:space-between;align-items:center;">
+    <img src=".assets/image-20241008032109316.png" alt="image" style="zoom:35%;filter: drop-shadow(#cccccc 0px 18px 18px);"/>
+    <img src=".assets/image-20241008021358038.png" alt="image" style="zoom:35%;filter: drop-shadow(#cccccc 0px 18px 18px);"/>
+</div>
 
 <br>
-<div align="center">
-<img width="80%" alt="Screenshot" src=".assets/preview.png">
-</div>
 
 ### 安装与使用
 
 #### Typora
 
 1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，设置 Lapis Cv 作为主题：
-   
+
     1. 在 Typora 菜单中选择 偏好设置 (Preferences) -> 找到外观部分，点击“打开主题文件夹”按钮
     2. 将 lapis-cv.css 和 lapis-cv 文件夹复制到 Typora 的主题文件夹中
-    3. 重启 Typora，然后从主题列表中选择 Lapis Cv
-    
-3. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
+    3. 重启 Typora，然后从主题列表中选择 `Lapis Cv` / `Lapis Cv Serif`。
+2. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
 
 #### VSCode
 
 1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest) 并解压。
 2. 在 VSCode 中打开该文件夹，并安装插件 [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)。
 3. 打开模版文件 [template.md](vscode/template.md) 进行内容编辑，右上角点击 Open Preview 图标可进行实时预览。右键选择 Markdown PDF - Export (pdf) 即可导出 PDF 文件。
+4. 切换主题：编辑 `.vscode/settings.json` 中 `"markdown.styles"` 最后一项，`lapis-cv.css`对应 LapisCV，`lapis-cv-serif.css` 对应 LapisCV Serif。
 
 需要注意，VSCode 中安装的其他插件可能会影响预览显示效果，若预览效果与生成 PDF 中效果不一致，请检查是否有插件影响。
 
 #### Obsidian
 
 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，将 `lapis-cv-obsidian` 目录作为 Vault 在 Obsidian 打开，编辑 template 并导出 PDF 文件即可。
+
+Obsidian 暂不支持 Serif 主题样式。
 
 ### 格式
 
@@ -115,7 +133,7 @@
 
 其中页边距需要在 VSCode 设置中修改：
 
-- 直接修改 .vscode/settings.json 文件中的 markdown-pdf.margin 相关项。
+- 直接修改 `.vscode/settings.json` 文件中的 markdown-pdf.margin 相关项。
 
 - 另外的，还可以通过 GUI 进行修改：
 

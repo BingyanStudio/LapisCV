@@ -6,43 +6,40 @@
 /* Global */
 
 @media screen {
-    body {
-        color: unset !important;
-        box-shadow: 0 0 4mm 0 #dae3eac9;
-        padding-left: 20mm;
-        padding-right: 20mm;
-        padding-top: 13mm;
-        padding-bottom: 22mm;
-        margin: 8mm auto;
-    }
+  body {
+    padding-left: 20mm;
+    padding-right: 20mm;
+    padding-top: 13mm;
+    padding-bottom: 22mm;
+    margin: 8mm auto;
+  }
 }
 
 /* Avatar */
 
 @media screen {
-    img[alt="avatar"] {
-        box-shadow: 0 0 0 3mm var(--vscode-editor-background);
-    }
+  body img[alt="avatar"] {
+    box-shadow: 0 0 0 3mm var(--vscode-editor-background, #fff);
+  }
 }
 
-@media print {
-    img[alt="avatar"] {
-        top: 18mm;
-        right: 6mm;
-    }
-}
+/* Color Override */
 
 @media screen {
-    code {
-        background-color: unset !important;
-        color: unset !important;
-    }
+  body code {
+    background-color: unset;
+    color: var(--vscode-editor-foreground, --text-normal) !important;
+  }
+
+  body p, body li {
+    color: var(--vscode-editor-foreground, --text-normal);
+  }
 }
 
 /* Block Quote */
 
-blockquote {
-    background: unset !important;
-    border-left-width: unset;
-    border-left-style: unset;
+body blockquote {
+  background: unset;
+  border-left-width: unset;
+  border-left-style: unset;
 }

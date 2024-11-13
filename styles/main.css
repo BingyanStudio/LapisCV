@@ -32,7 +32,6 @@
 
 p,
 li {
-    text-align: justify;
     font-size: var(--text-size);
     line-height: var(--line-height);
     color: var(--text-normal);

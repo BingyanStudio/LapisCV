@@ -41,13 +41,13 @@
     2. 将 lapis-cv.css 和 lapis-cv 文件夹复制到 Typora 的主题文件夹中
     3. 重启 Typora，然后从主题列表中选择 Lapis Cv
     
-3. 打开模版文件 [template.md](typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
+3. 打开模版文件 [template.md](templates/typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
 
 #### VSCode
 
 1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest) 并解压。
 2. 在 VSCode 中打开该文件夹，并安装插件 [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)。
-3. 打开模版文件 [template.md](vscode/template.md) 进行内容编辑，右上角点击 Open Preview 图标可进行实时预览。右键选择 Markdown PDF - Export (pdf) 即可导出 PDF 文件。
+3. 打开模版文件 [template.md](templates/vscode/template.md) 进行内容编辑，右上角点击 Open Preview 图标可进行实时预览。右键选择 Markdown PDF - Export (pdf) 即可导出 PDF 文件。
 
 需要注意，VSCode 中安装的其他插件可能会影响预览显示效果，若预览效果与生成 PDF 中效果不一致，请检查是否有插件影响。
 

@@ -1,10 +1,9 @@
 # 八爪猫
 
-> <span class="icon">&#xe60f;</span> `(123)456-7890`  <span class="icon">&#xe7ca;</span> `octocat@github.com`   <span class="icon">&#xe600;</span> [octocat](https://github.com/octocat)
-
+> <span class="icon">&#xe60f;</span> `(123)456-7890`      <span class="icon">&#xe7ca;</span> `octocat@github.com`      <span class="icon">&#xe600;</span> [octocat](https://github.com/octocat)
 <img class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4">
 
-##  基本信息
+##  教育经历
 
 <div class="entry-title">
     <h3>八爪科技大学 - 本科 - 软件工程专业</h3> 
@@ -25,7 +24,7 @@
 
 <div class="entry-title">
     <h3>软件开发实习生 - 八爪科技</h3> 
-    <span>2008.06 - 2008.08</span>
+    <p>2008.06 - 2008.08</p>
 </div>
 
 与软件工程师团队合作，使用 Octolang 开发数据可视化仪表盘，为海洋保护工作提供八爪种群趋势的洞察。

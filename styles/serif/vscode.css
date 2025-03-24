@@ -47,6 +47,7 @@ body,
 @font-face {
     font-family: "SourceHanSerifCN";
     src: url('../fonts/SourceHanSerifCN-Bold.ttf');
+    font-weight: bold;
 }
 
 @font-face {

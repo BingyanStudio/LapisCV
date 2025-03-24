@@ -33,12 +33,6 @@ body,
     --background-primary: #fff;
 }
 
-@media print {
-    .typora-export {
-        margin: -2mm 10mm -2mm 10mm;
-    }
-}
-
 /* Font Face */
 
 @font-face {
@@ -55,6 +49,7 @@ body,
 @font-face {
     font-family: "SourceHanSerifCN";
     src: url('lapis-cv/fonts/SourceHanSerifCN-Bold.ttf');
+    font-weight: bold;
 }
 
 @font-face {

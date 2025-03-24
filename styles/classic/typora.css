@@ -33,12 +33,6 @@ body,
     --background-primary: #fff;
 }
 
-@media print {
-    .typora-export {
-        margin: -2mm 6mm -2mm 6mm;
-    }
-}
-
 /* Font Face */
 
 @font-face {

@@ -4,9 +4,18 @@
  */
 
 body {
-    --line-height: 1.8;
-    --text-size: 9.5pt;
+
+    /* Custom Configs */
+
     --file-margins: 13mm 18mm 12mm 18mm;
+
+    --line-height: 1.8;
+
+    --text-size: 9.5pt;
+    --h1-size: 25pt;
+    --h2-size: 13pt;
+    --h3-size: 11pt;
+    --blockquote-size: 9.3pt;
 
     --text-font: "LapisCV Icon", 'SourceHanSansCN';
     --title-font: "LapisCV Icon", 'SourceHanSerifCN';
@@ -17,36 +26,32 @@ body {
     --text-normal: #353a42;
     --text-strong: #121418;
     --color-accent: #4870ad;
+    --h1-color: var(--text-normal);
+    --h2-color: var(--color-accent);
+    --h3-color: var(--text-normal);
+    --link-color: var(--color-accent);
     --border-color: #dae3ea;
     --shadow-color: #a7bbc969;
     --code-background: var(--background-primary);
 
+    /* Obsidian Variables */
+
     --font-text: var(--text-font);
     --font-text-size: var(--text-size);
-    --blockquote-size: 9.3pt;
     --line-height-normal: var(--line-height);
     --p-spacing: 0;
 
-    --h1-size: 25pt;
     --h1-weight: bold;
     --h1-line-height: 1.5;
-    --h1-color: var(--text-normal);
     --h1-font: var(--title-font);
-
-    --h2-size: 13pt;
     --h2-weight: bold;
     --h2-line-height: 1;
-    --h2-color: var(--color-accent);
     --h2-font: var(--title-font);
-
-    --h3-size: 11pt;
     --h3-weight: bold;
     --h3-line-height: 1.8;
-    --h3-color: var(--text-normal);
     --h3-font: var(--title-font);
 
     --font-monospace: var(--code-font);
-    --link-color: var(--color-accent);
     --link-external-color: var(--text-accent-hover);
     --link-external-decoration: var(--background-primary);
     --text-accent: var(--link-color);

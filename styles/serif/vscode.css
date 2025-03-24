@@ -3,17 +3,55 @@
  *   https://github.com/BingyanStudio/LapisCV
  */
 
+body,
+:root {
+    --line-height: 1.8;
+
+    --text-size: 9.5pt;
+    --h1-size: 25pt;
+    --h2-size: 13pt;
+    --h3-size: 11pt;
+    --blockquote-size: 9.3pt;
+
+    --text-font: 'SourceHanSansCN';
+    --title-font: 'SourceHanSerifCN';
+    --link-font: 'JetBrainsMono';
+    --code-font: 'JetBrainsMono';
+
+    --avatar-width: 24mm;
+    --text-normal: #353a42;
+    --text-strong: #121418;
+    --color-accent: #4870ad;
+    --h1-color: var(--text-normal);
+    --h2-color: var(--color-accent);
+    --h3-color: var(--text-normal);
+    --h4-color: var(--text-normal);
+    --link-color: var(--color-accent);
+    --border-color: #dae3ea;
+    --background-primary: #fff;
+}
+
 /* Font Face */
 
 @font-face {
     font-family: "SourceHanSansCN";
-    src: url('../fonts/SourceHanSansCN-Regular.otf');
+    src: url('../fonts/SourceHanSansCN-Regular.ttf');
 }
 
 @font-face {
     font-family: "SourceHanSansCN";
-    src: url('../fonts/SourceHanSansCN-Medium.otf');
+    src: url('../fonts/SourceHanSansCN-Medium.ttf');
     font-weight: bold;
+}
+
+@font-face {
+    font-family: "SourceHanSerifCN";
+    src: url('../fonts/SourceHanSerifCN-Bold.ttf');
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url('../fonts/JetBrainsMono-Regular.ttf');
 }
 
 @font-face {
@@ -28,64 +66,23 @@
     src: url('../fonts/iconfont.ttf?t=1727014108932') format('truetype');
 }
 
-@font-face {
-    font-family: "SourceHanSerifCN";
-    src: url('../fonts/SourceHanSerifCN-Bold.otf');
-}
-
-@font-face {
-    font-family: "JetBrainsMono";
-    src: url('lapis/JetBrainsMono-Regular.ttf');
-}
-
-* {
-    font-family: "LapisCV Icon", 'SourceHanSansCN';
-    font-size: 9.5pt;
-}
-
 @media screen {
     body {
-        box-shadow: 0 0 4mm 0 #dae3eac9;
+        box-shadow: 0 0 4mm 0 #a7bbc969;
         padding-left: 20mm;
         padding-right: 20mm;
         padding-top: 10mm;
         padding-bottom: 25mm;
         margin: 8mm auto;
+
+        --background-primary: var(--vscode-editor-background);
+        --text-normal: unset !important;
     }
-
-    p,
-    li,
-    h1,
-    h3,
-    h4,
-    h5,
-    h6,
-    blockquote,
-    blockquote a,
-    strong {
-        color: unset !important;
-    }
-}
-
-a,
-a span,
-code {
-    font-size: 10pt;
-    font-family: "LapisCV Icon", Consolas;
-}
-
-h1,
-h2,
-h3 {
-    font-family: "LapisCV Icon", 'SourceHanSerifCN';
 }
 
 h1 {
-    font-size: 25pt;
-    line-height: 1.5;
     padding: 1mm 0 0 0;
     margin: 3mm 1mm 0 1mm;
-    color: var(--text-normal);
 }
 
 h1,
@@ -94,30 +91,14 @@ blockquote p {
 }
 
 h2 {
-    font-size: 13pt;
-    line-height: 1;
     padding: 1.2mm 0;
     border-bottom: 1px solid #a2b6d4;
-}
-
-h3,
-h4,
-h5,
-h6 {
-    font-size: 11pt;
-    color: var(--text-normal);
-}
-
-strong {
-    color: #121418;
 }
 
 .avatar,
 img[alt="avatar"] {
     box-shadow: none;
     border: none;
-    width: 24mm;
-    height: 24mm;
     margin-top: -29mm !important;
     right: 1mm;
 }
@@ -136,15 +117,4 @@ blockquote p {
 
 blockquote a {
     color: var(--text-color);
-}
-
-@media screen {
-    code {
-        background-color: unset !important;
-        color: unset !important;
-    }
-}
-
-hr {
-    border: none;
 }

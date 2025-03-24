@@ -5,9 +5,37 @@
 
 @import "lapis-cv/styles/main.css";
 
+body,
+:root {
+    --line-height: 1.8;
+
+    --text-size: 9.5pt;
+    --h1-size: 25pt;
+    --h2-size: 13pt;
+    --h3-size: 11pt;
+    --blockquote-size: 9.3pt;
+
+    --text-font: 'SourceHanSansCN';
+    --title-font: 'SourceHanSerifCN';
+    --link-font: 'JetBrainsMono';
+    --code-font: 'JetBrainsMono';
+
+    --avatar-width: 24mm;
+    --text-normal: #353a42;
+    --text-strong: #121418;
+    --color-accent: #4870ad;
+    --h1-color: var(--text-normal);
+    --h2-color: var(--color-accent);
+    --h3-color: var(--text-normal);
+    --h4-color: var(--text-normal);
+    --link-color: var(--color-accent);
+    --border-color: #dae3ea;
+    --background-primary: #fff;
+}
+
 @media print {
-    @page {
-        margin: 12mm 8mm 0 8mm;
+    .typora-export {
+        margin: -2mm 10mm -2mm 10mm;
     }
 }
 
@@ -15,13 +43,23 @@
 
 @font-face {
     font-family: "SourceHanSansCN";
-    src: url('lapis-cv/fonts/SourceHanSansCN-Regular.otf');
+    src: url('lapis-cv/fonts/SourceHanSansCN-Regular.ttf');
 }
 
 @font-face {
     font-family: "SourceHanSansCN";
-    src: url('lapis-cv/fonts/SourceHanSansCN-Medium.otf');
+    src: url('lapis-cv/fonts/SourceHanSansCN-Medium.ttf');
     font-weight: bold;
+}
+
+@font-face {
+    font-family: "SourceHanSerifCN";
+    src: url('lapis-cv/fonts/SourceHanSerifCN-Bold.ttf');
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url('lapis-cv/fonts/JetBrainsMono-Regular.ttf');
 }
 
 @font-face {
@@ -36,50 +74,24 @@
     src: url('lapis-cv/fonts/iconfont.ttf?t=1727014108932') format('truetype');
 }
 
-@font-face {
-    font-family: "SourceHanSerifCN";
-    src: url('lapis-cv/fonts/SourceHanSerifCN-Bold.otf');
-}
-
-p,
-li {
-    font-size: 9.7pt;
-    font-family: "LapisCV Icon", 'SourceHanSansCN';
-}
-
 @media screen {
     #write {
         top: 10mm !important;
         max-width: 224mm;
-        box-shadow: 0 0 4mm 0 #dae3eac9;
+        box-shadow: 0 0 4mm 0 #a7bbc969;
         padding-left: 20mm;
         padding-right: 20mm;
         padding-top: 15mm;
     }
+
     ::before {
         color: var(--color-accent);
     }
 }
 
-a,
-a span,
-code {
-    font-size: 9.7pt;
-    font-family: "LapisCV Icon", var(--monospace);
-}
-
-h1,
-h2,
-h3 {
-    font-family: "LapisCV Icon", 'SourceHanSerifCN';
-}
-
 h1 {
-    font-size: 25pt;
-    line-height: 1.5;
     padding: 1mm 0 0 0;
     margin: 3mm 1mm 0 1mm;
-    color: var(--text-normal);
 }
 
 h1,
@@ -88,21 +100,7 @@ blockquote p {
 }
 
 h2 {
-    font-size: 13pt;
-    line-height: 1;
     padding: 1.2mm 0;
-}
-
-h3,
-h4,
-h5,
-h6 {
-    font-size: 11pt;
-    color: var(--text-normal);
-}
-
-strong {
-    color: #121418;
 }
 
 .avatar,
@@ -111,10 +109,8 @@ img[alt="avatar"] {
     position: absolute;
     box-shadow: none;
     border: none;
-    top: -27mm;
+    top: -25mm;
     right: 1mm;
-    width: 24mm;
-    height: 24mm;
 }
 
 blockquote {
@@ -123,8 +119,4 @@ blockquote {
 
 blockquote p {
     line-height: 1.5;
-}
-
-blockquote a {
-    color: var(--text-color);
 }

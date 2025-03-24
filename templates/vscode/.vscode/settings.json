@@ -1,6 +1,5 @@
 {
     "markdown.styles": [
-        "./lapis-cv/styles/font.css",
         "./lapis-cv/styles/main.css",
         "./lapis-cv/styles/lapis-cv-serif.css"
     ],

@@ -3,18 +3,56 @@
  *   https://github.com/BingyanStudio/LapisCV
  */
 
-/* Custom Config */
-
 body {
-    /* Obsidian Print Margin - <up> <right> <down> <left> */
+    --line-height: 1.8;
+    --text-size: 10pt;
+    --blockquote-size: 9.5pt;
     --file-margins: 13mm 15mm 12mm 15mm;
 
+    --text-font: "LapisCV Icon", 'SourceHanSansCN';
+    --title-font: "LapisCV Icon", 'SourceHanSansCN';
+    --link-font: "LapisCV Icon", 'JetBrainsMono';
+    --code-font: "LapisCV Icon", 'JetBrainsMono';
+
+    --avatar-width: 28mm;
+    --text-normal: #353a42;
+    --text-strong: #353a42;
+    --color-accent: #4870ad;
+    --border-color: #dae3ea;
+    --shadow-color: #a7bbc969;
+    --code-background: var(--background-primary);
+
+    --font-text: var(--text-font);
+    --font-text-size: var(--text-size);
+    --line-height-normal: var(--line-height);
+    --p-spacing: 0;
+
+    --h1-size: 16pt;
+    --h1-weight: bold;
+    --h1-line-height: 1.5;
+    --h1-color: var(--text-normal);
+    --h1-font: var(--title-font);
+
+    --h2-size: 12pt;
+    --h2-weight: bold;
+    --h2-line-height: 1;
+    --h2-color: var(--color-accent);
+    --h2-font: var(--title-font);
+
+    --h3-size: 10.5pt;
+    --h3-weight: bold;
+    --h3-line-height: 1.8;
+    --h3-color: var(--text-normal);
+    --h3-font: var(--title-font);
+
+    --font-monospace: var(--code-font);
+    --link-color: var(--color-accent);
     --link-external-color: var(--text-accent-hover);
     --link-external-decoration: var(--background-primary);
-    --link-external-filter: brightness(1.3) hue-rotate(-10deg);
     --text-accent: var(--link-color);
     --text-accent-hover: var(--link-color);
-    --p-spacing: 0;
+    --code-size: var(--text-size);
+
     --heading-spacing: 0;
     --list-spacing: 0;
     --list-indent-editing: 0;
@@ -22,46 +60,46 @@ body {
     --file-line-width: 224mm;
 }
 
-/* Global */
-
-.cm-line {
-    line-height: 1.8;
-}
-
-.cm-sizer,
-.markdown-preview-sizer {
-    margin: auto;
-    max-width: 224mm;
-    /* max-height: 311mm; */
-    box-shadow: 0 0 4mm 0 #dae3eac9;
-    padding-left: 20mm;
-    padding-right: 20mm;
-    padding-top: 14mm;
+@media screen {
+    body {
+        --text-normal: var(--color-base-100) !important;
+    }
 }
 
 .cm-line:has(br) {
     height: 0;
 }
 
-/* Title */
-
 .inline-title {
     visibility: hidden;
 }
 
+.external-link {
+    background-image: none;
+    filter: brightness(1.3) hue-rotate(-10deg);
+}
+
+.markdown-rendered ul>li {
+    margin-inline-start: 3mm;
+}
+
+.cm-sizer,
+.markdown-preview-sizer {
+    margin: auto;
+    max-width: 224mm;
+    box-shadow: 0 0 4mm 0 var(--shadow-color);
+    padding-left: 20mm;
+    padding-right: 20mm;
+    padding-top: 14mm;
+}
+
 .HyperMD-header.HyperMD-header-1.cm-line {
-    color: var(--text-normal);
-    line-height: var(--h1-line-height);
     text-align: center;
-    margin-block-start: 0 !important;
     margin-block-end: 1.4mm !important;
-    padding-bottom: 1mm;
 }
 
 .HyperMD-header.HyperMD-header-2.cm-line {
-    color: var(--color-accent);
-    border-bottom: 1px solid color-mix(in srgb, var(--color-accent), rgb(0 0 0 / 0) 60%);
-    line-height: 1;
+    border-bottom: 1px solid var(--color-accent);
     padding: 1mm 0;
     margin-block-start: 2mm !important;
     margin-block-end: 2.3mm !important;
@@ -71,7 +109,6 @@ body {
 .HyperMD-header.HyperMD-header-5.cm-line,
 .HyperMD-header.HyperMD-header-4.cm-line,
 .HyperMD-header.HyperMD-header-3.cm-line {
-    color: var(--text-normal);
     padding-top: 0;
     margin-block-start: 0 !important;
     margin-block-end: 0 !important;
@@ -81,40 +118,26 @@ body {
     padding-right: 2.2mm;
 }
 
-/* Avatar */
-
-.cm-line:has(.avatar, img[alt="avatar"]) {
-    height: 0;
-    text-align: center;
-}
-
-@media print {
-
-    .avatar,
-    img[alt="avatar"] {
-        position: absolute;
-        top: 31mm;
-        right: 15mm;
-    }
-}
-
-/* Block Quote */
-
-blockquote p,
 .markdown-rendered blockquote,
 .HyperMD-quote.cm-line {
     line-height: 1.6;
     border-left: none;
     text-align: center;
+
+    a {
+        color: var(--text-normal) !important;
+    }
 }
 
 :before {
     visibility: hidden;
 }
 
-/* Horizontal Line */
+.cm-line:has(.avatar, img[alt="avatar"]) {
+    height: 0;
+    text-align: center;
+}
 
-.hr,
-hr {
-    padding: 25mm 0 0mm 0 !important;
+.hr {
+    padding: 10mm 0 0mm 0 !important;
 }

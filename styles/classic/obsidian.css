@@ -9,9 +9,10 @@ body {
 
     --file-margins: 13mm 15mm 12mm 15mm;
 
-    --line-height: 1.8;
-
     --text-size: 10pt;
+    --line-height: 1.8;
+    --avatar-width: 28mm;
+
     --h1-size: 16pt;
     --h2-size: 12pt;
     --h3-size: 10.5pt;
@@ -22,14 +23,13 @@ body {
     --link-font: "LapisCV Icon", 'JetBrainsMono';
     --code-font: "LapisCV Icon", 'JetBrainsMono';
 
-    --avatar-width: 28mm;
-    --text-normal: #353a42;
-    --text-strong: #353a42;
     --color-accent: #4870ad;
+    --text-normal: #353a42;
+    --link-color: var(--color-accent);
+    --text-strong: #353a42;
     --h1-color: var(--text-normal);
     --h2-color: var(--color-accent);
     --h3-color: var(--text-normal);
-    --link-color: var(--color-accent);
     --border-color: #dae3ea;
     --shadow-color: #a7bbc969;
     --code-background: var(--background-primary);

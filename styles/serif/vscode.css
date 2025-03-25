@@ -8,9 +8,10 @@ body,
 
     /* Custom Configs */
 
-    --line-height: 1.8;
-
     --text-size: 9.5pt;
+    --line-height: 1.8;
+    --avatar-width: 24mm;
+
     --h1-size: 25pt;
     --h2-size: 13pt;
     --h3-size: 11pt;
@@ -21,15 +22,14 @@ body,
     --link-font: 'JetBrainsMono';
     --code-font: 'JetBrainsMono';
 
-    --avatar-width: 24mm;
-    --text-normal: #353a42;
-    --text-strong: #121418;
     --color-accent: #4870ad;
+    --text-normal: #353a42;
+    --link-color: var(--color-accent);
+    --text-strong: #121418;
     --h1-color: var(--text-normal);
     --h2-color: var(--color-accent);
     --h3-color: var(--text-normal);
     --h4-color: var(--text-normal);
-    --link-color: var(--color-accent);
     --border-color: #dae3ea;
     --background-primary: #fff;
 }

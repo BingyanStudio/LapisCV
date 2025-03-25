@@ -116,7 +116,28 @@ Replace the src image path when editing the avatar. Delete this line if no avata
 
 <details>
 
-<summary>Page Breaks and Page Numbers</summary>
+<summary>Icons</summary>
+
+<br>
+
+Supported Icons:
+
+| Icon | Escaped Unicode | Icon | Escaped Unicode |
+|------|-----------------|------|-----------------|
+| <img src="https://github.com/user-attachments/assets/3e7e6713-dcf2-4fac-b84c-f40887ae0c76" width="32"/> | `&#xe60f;` | <img src="https://github.com/user-attachments/assets/9acae420-7016-4e6b-a0ab-cef418bcb33c" width="32"/> | `&#xe7ca;` |
+| <img src="https://github.com/user-attachments/assets/3bd39547-2e08-4f44-992f-9da011ee9b7d" width="32"/> | `&#xe600;` | <img src="https://github.com/user-attachments/assets/71a468d2-96e2-48df-8aea-fe91c67f7650" width="32"/> | `&#xe618;` |
+| <img src="https://github.com/user-attachments/assets/65e6b2ed-5639-4928-a366-6251297368fa" width="32"/> | `&#xe80c;` | <img src="https://github.com/user-attachments/assets/ad9c952c-96cd-4492-bcbc-9d4f9465e131" width="32"/> | `&#xecfa;` |
+| <img src="https://github.com/user-attachments/assets/88de89a8-887d-4aa1-aefe-69841ef1cfdb" width="32"/> | `&#xe69c;` | <img src="https://github.com/user-attachments/assets/11a913c4-bf4e-441d-8c51-a33cfdcea9f4" width="32"/> | `&#xe6b3;` |
+| <img src="https://github.com/user-attachments/assets/a150e7e7-8024-4e4c-a693-2c0ee3d67fba" width="32"/> | `&#xe8ae;` | <img src="https://github.com/user-attachments/assets/433fb4bf-a79a-4274-877b-d8c8fa281f8b" width="32"/> | `&#xe782;` |
+| <img src="https://github.com/user-attachments/assets/0260e833-0461-483d-94af-595e76385645" width="32"/> | `&#xe8b4;` | <img src="https://github.com/user-attachments/assets/8a59848f-db0a-494b-8966-13625e2a7d72" width="32"/> | `&#xe603;` |
+| <img src="https://github.com/user-attachments/assets/2c7b7f72-ed79-43cc-b238-c9ed2b6bcbc4" width="32"/> | `&#xe8b5;` | <img src="https://github.com/user-attachments/assets/2349f66c-962b-4351-89dc-2d8e2e123c6e" width="32"/> | `&#xe638;` |
+| <img src="https://github.com/user-attachments/assets/7f4d80ce-cc50-4683-aa74-b5aca8b9da6e" width="32"/> | `&#xe635;` | <img src="https://github.com/user-attachments/assets/70b78f69-09be-4a44-b6ed-97be9420c2d1" width="32"/> | `&#xe673;` |
+
+</details>
+
+<details>
+
+<summary>Page Breaks & Page Numbers</summary>
 
 <br>
 

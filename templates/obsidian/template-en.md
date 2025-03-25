@@ -1,10 +1,10 @@
 # The Octocat
 
-> <span alt="icon">&#xe60f;</span> `(123)456-7890`      <span alt="icon">&#xe7ca;</span> `octocat@github.com`      <span alt="icon">&#xe600;</span> [octocat](https://github.com/octocat)
+> <span class="icon">&#xe60f;</span> `(123)456-7890` <span>&emsp;</span> <span class="icon">&#xe7ca;</span> `octocat@github.com` <span>&emsp;</span> <span class="icon">&#xe600;</span> [octocat](https://github.com/octocat)
 
 <img alt="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4">
 
-##  Education
+## <span>&#xe80c;</span> Education
 
 <div alt="entry-title">
     <h3>Octo Open-Source University</h3> 
@@ -16,7 +16,7 @@ Bachelor of Science, Computer Science
 - **Awards**: GitHub Pair Extraordinaire, GitHub Arctic Code Vault Contributor, GitHub Starstruck, etc.
 - **Campus Experience**: OctoStudio Captain, driving tech and open-source innovation for octopus tribe.
 
-##  Work Experience
+## <span>&#xe618;</span> Work Experience
 
 <div alt="entry-title">
     <h3>Software Engineer - OctoConnect Inc., Octoland</h3> 
@@ -38,7 +38,7 @@ Collaborated with a team of software engineers to develop a data visualization d
 - Assisted in troubleshooting and resolving technical issues, demonstrating problem-solving skills and a proactive approach to tackling challenges in a fast-paced environment.
 - Provide insights into octopus population trends for marine conservation efforts.
 
-##  Projects
+## <span>&#xe635;</span> Projects
 
 <div alt="entry-title">
     <h3>GitFlix</h3>
@@ -60,7 +60,7 @@ Developed a web application using Octo.js that integrates with the GitHub API to
 - Implemented features such as octopus-themed data visualizations and achievements to gamify the experience and encourage continuous improvement in open-source contributions.
 - Leveraged GitHub Actions for automated testing and deployment.
 
-##  Skills
+## <span>&#xecfa;</span> Skills
 
 - Proficient in multiple programming languages, including Octolang, OctoScript, and more, with a strong grasp of object-oriented and functional programming paradigms.
 - Excellent communication and collaboration skills, both with octopuses and fellow cats.

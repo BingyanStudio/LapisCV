@@ -49,15 +49,6 @@
 - 使用 JSON Web Tokens 和 bcrypt 实现用户身份验证和授权，用于安全密码哈希。利用 GitHub Actions 进行持续集成和部署，确保流畅高效的开发工作流程。
 
 <div class="entry-title">
-    <h3>OctoConnect</h3> 
-    <a href="https://github.com/YiNNx/cmd-wrapped">github.com/octocat/gitflix</a>
-</div>
-
-团队项目，使用 OctoDB 和 Octolang 创建八爪生物社交平台。
-- 设计八爪风格的用户个人资料和互动功能，例如基于触手的消息传递和墨水喷溅反应，以促进全球八爪生物和猫之间的社区参与。
-- 集成 OAuth 认证，与 GitHub 账户进行同步，为 Octocat 和其他在 GitHub 上活跃的八爪生物提供无缝登录和个人资料同步。
-
-<div class="entry-title">
     <h3>OctoGithubber</h3> 
     <a href="https://github.com/YiNNx/cmd-wrapped">github.com/octocat/gitflix</a>
 </div>

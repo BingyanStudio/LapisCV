@@ -3,36 +3,20 @@
  *   https://github.com/BingyanStudio/LapisCV
  */
 
-/* Custom Config */
+/* Text */
 
-:root, body {
-    --text-size: 10pt;
-    --line-height: 1.8;
-    --avatar-width: 29mm;
-
-    --color-accent: hsl(216,41%,48%);
-    --text-normal: #353a42;
-    --border-color: #dae3ea;
-    --h2-color: var(--color-accent);
-    --link-color: var(--color-accent);
-    --background-primary: #fff;
-    --code-background: var(--background-primary);
-
-    --h1-size: 16pt;
-    --h2-size: 12pt;
-    --h3-size: 10.5pt;
-    --code-size: 10pt;
-
-    --h1-line-height: 1.5;
-    --h2-line-height: 1;
-    --h3-line-height: 1.8;
+a,
+a span {
+    font-family: var(--link-font);
 }
 
-/* Text */
+code {
+    font-family: var(--code-font);
+}
 
 p,
 li {
-    text-align: justify;
+    font-family: "LapisCV Icon", var(--text-font);
     font-size: var(--text-size);
     line-height: var(--line-height);
     color: var(--text-normal);
@@ -44,11 +28,13 @@ h1,
 h2,
 h3 {
     font-weight: bold;
+    font-family: "LapisCV Icon", var(--title-font);
 }
 
 h1 {
     font-size: var(--h1-size);
-    line-height: var(--h1-line-height);
+    color: var(--h1-color);
+    line-height: 1.5;
     border-bottom: 0;
 }
 
@@ -60,10 +46,10 @@ blockquote p {
 h2 {
     color: var(--h2-color);
     font-size: var(--h2-size);
-    border-bottom: 1px solid var(--color-accent);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-accent), rgb(0 0 0 / 0) 60%);
     margin-top: 2.4mm !important;
     margin-bottom: 1.9mm !important;
-    line-height: var(--h2-line-height);
+    line-height: 1;
     padding: 1mm 0;
 }
 
@@ -71,7 +57,8 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: var(--h3-line-height);
+    color: var(--h3-color);
+    line-height: 1.8;
     font-size: var(--h3-size);
 }
 
@@ -107,6 +94,10 @@ li p {
     h6 {
         page-break-after: avoid;
     }
+}
+
+strong {
+    color: var(--text-strong);
 }
 
 /* List */
@@ -148,10 +139,11 @@ ol ::marker {
 
 /* Avatar */
 
+.avatar,
 img[alt="avatar"] {
     display: block;
     position: relative;
-    top: 3mm;
+    top: 1mm;
     right: 0;
     z-index: 9999;
     float: right;
@@ -163,11 +155,14 @@ img[alt="avatar"] {
     border-radius: 50%;
     border: 2px solid var(--border-color);
     box-shadow: 0 0 0 3mm var(--background-primary);
+    margin: 0 0 0 3mm;
 }
 
-p:has(img[alt="avatar"]) {
+p:has(.avatar, img[alt="avatar"]) {
     height: 0;
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 /* Link */
@@ -184,19 +179,42 @@ a {
 code {
     background-color: var(--background-primary);
     color: var(--text-normal) !important;
-    font-size: var(--code-size);
+    font-size: var(--text-size);
 }
 
 /* Block Quote */
 
-blockquote {
+blockquote,
+blockquote * {
     line-height: 1.6;
+    padding: 0;
+    border-inline-start: none !important;
+    font-size: var(--blockquote-size);
+}
+
+blockquote a {
+    color: var(--text-normal) !important;
+}
+
+/* Custom Class */
+
+.entry-title,
+div[alt="entry-title"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon,
+span[alt="icon"] {
+    color: var(--color-accent);
 }
 
 /* Horizontal Line */
 
 hr {
     border-top: 2px solid #dae3eac9;
+    border-bottom: none;
     margin: 15mm 0 12mm 0;
 }
 

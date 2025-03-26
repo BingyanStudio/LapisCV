@@ -1,0 +1,148 @@
+/* 
+ *   Lapis CV  /  Author - YiNN (BingyanStudio)
+ *   https://github.com/BingyanStudio/LapisCV
+ */
+
+body {
+
+    /* Custom Configs */
+
+    --file-margins: 13mm 15mm 12mm 15mm;
+
+    --text-size: 10pt;
+    --line-height: 1.8;
+    --avatar-width: 28mm;
+
+    --h1-size: 16pt;
+    --h2-size: 12pt;
+    --h3-size: 10.5pt;
+    --blockquote-size: 9.5pt;
+
+    --text-font: "LapisCV Icon", 'SourceHanSansCN';
+    --title-font: "LapisCV Icon", 'SourceHanSansCN';
+    --link-font: "LapisCV Icon", 'JetBrainsMono';
+    --code-font: "LapisCV Icon", 'JetBrainsMono';
+
+    --color-accent: #4870ad;
+    --text-normal: #353a42;
+    --link-color: var(--color-accent);
+    --text-strong: #353a42;
+    --h1-color: var(--text-normal);
+    --h2-color: var(--color-accent);
+    --h3-color: var(--text-normal);
+    --border-color: #dae3ea;
+    --shadow-color: #a7bbc969;
+    --code-background: var(--background-primary);
+
+    /* Obsidian Variables */
+
+    --font-text: var(--text-font);
+    --font-text-size: var(--text-size);
+    --line-height-normal: var(--line-height);
+    --p-spacing: 0;
+
+    --h1-weight: bold;
+    --h1-line-height: 1.5;
+    --h1-font: var(--title-font);
+    --h2-weight: bold;
+    --h2-line-height: 1;
+    --h2-font: var(--title-font);
+    --h3-weight: bold;
+    --h3-line-height: 1.8;
+    --h3-font: var(--title-font);
+
+    --font-monospace: var(--code-font);
+    --link-external-color: var(--text-accent-hover);
+    --link-external-decoration: var(--background-primary);
+    --text-accent: var(--link-color);
+    --text-accent-hover: var(--link-color);
+    --code-size: var(--text-size);
+
+    --heading-spacing: 0;
+    --list-spacing: 0;
+    --list-indent-editing: 0;
+    --list-indent: 2.5mm;
+    --file-line-width: 224mm;
+}
+
+@media screen {
+    body {
+        --text-normal: var(--color-base-100) !important;
+    }
+}
+
+.cm-line:has(br) {
+    height: 0;
+}
+
+.inline-title {
+    visibility: hidden;
+}
+
+.external-link {
+    background-image: none;
+    filter: brightness(1.3) hue-rotate(-10deg);
+}
+
+.markdown-rendered ul>li {
+    margin-inline-start: 3mm;
+}
+
+.cm-sizer,
+.markdown-preview-sizer {
+    margin: auto;
+    max-width: 224mm;
+    box-shadow: 0 0 4mm 0 var(--shadow-color);
+    padding-left: 20mm;
+    padding-right: 20mm;
+    padding-top: 14mm;
+}
+
+.HyperMD-header.HyperMD-header-1.cm-line {
+    text-align: center;
+    margin-block-end: 1.4mm !important;
+}
+
+.HyperMD-header.HyperMD-header-2.cm-line {
+    border-bottom: 1px solid var(--color-accent);
+    padding: 1mm 0;
+    margin-block-start: 2mm !important;
+    margin-block-end: 2.3mm !important;
+}
+
+.HyperMD-header.HyperMD-header-6.cm-line,
+.HyperMD-header.HyperMD-header-5.cm-line,
+.HyperMD-header.HyperMD-header-4.cm-line,
+.HyperMD-header.HyperMD-header-3.cm-line {
+    padding-top: 0;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+.cm-formatting-list {
+    padding-right: 2.2mm;
+}
+
+.markdown-rendered blockquote,
+.HyperMD-quote.cm-line {
+    line-height: 1.6;
+    border-left: none;
+    text-align: center;
+
+    a {
+        color: var(--text-normal) !important;
+    }
+}
+
+:before {
+    visibility: hidden;
+}
+
+.cm-line:has(.avatar, img[alt="avatar"]) {
+    height: 0;
+    text-align: center;
+}
+
+.hr {
+    padding: 10mm 0 0mm 0 !important;
+}

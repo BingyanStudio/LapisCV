@@ -1,8 +1,15 @@
+<p align="right">
+	English / 
+	<a href="https://github.com/BingyanStudio/LapisCV/blob/master/README-CN.md">
+    简体中文
+	</a>
+</p>
+
 <h1 align="center">
     LapisCV
 </h1>
 <p align="center">
-    📃 开箱即用的 Markdown 简历，支持 VSCode / Obsidian / Typora
+    📄 Easily create resumes with Markdown on VSCode / Typora / Obsidian
 </p>
 <div align="center">
     <img alt="Release" src="https://img.shields.io/github/v/release/BingyanStudio/LapisCV?style=flat-square&color=1694b6">
@@ -12,118 +19,245 @@
     <img alt="Downloads" src="https://img.shields.io/github/downloads/BingyanStudio/LapisCV/total?style=flat-square&color=5e76c3">  
 </div><br>
 
-基于 Markdown 格式，易于编辑，所见即所得。风格简洁正式，支持多页，适用于大部分求职 / 求学场景。
-
-### 预览
-
-- 编辑页
+## Preview
 
 <div align="center">
-<div>
-<img src=".assets/screenshot-obsidian.png" width="90%" />
-</div>
+    <img src="https://github.com/user-attachments/assets/0ce9e9f2-8a75-4fd0-a6e1-4bf981c2c735" />
+    <p>LapisCV Serif (new in v2.0.0)</p>
+    <img src="https://github.com/user-attachments/assets/38f43bdc-47df-4401-9e3d-0a02da4d034d" />
+    <p>LapisCV</p>
+    <img width="80%" src="https://github.com/user-attachments/assets/86ff88ca-e473-4d1d-9b92-717339bdaee4" />
+    <p>Typora Editor</p>
 </div>
 
-- [PDF样例](https://raw.githubusercontent.com/BingyanStudio/LapisCV/main/.assets/preview.pdf)
+## Quick Start
+
+### Installation
+
+<details>
+
+<summary>Typora</summary>
+
+1. Download [Release](https://github.com/BingyanStudio/LapisCV/releases/latest) and unzip, set the theme:
+
+   1. Open Typora theme folder: `Preferences > Appearance > Open Theme Folder`
+   2. Copy files to the theme folder: `lapis-cv.css`, `lapis-cv-serif.css`, `lapis-cv` directory
+   3. Restart Typora, select `Lapis Cv` / `Lapis Cv Serif` from the theme menu.
+
+2. Open template file to edit.
+3. `File > Export > PDF` to export the PDF file.
+
+   Before exporting, set the page size to A4 and margins to custom in `Preferences > Export > PDF`, with top and bottom margins of 13mm, and left and right margins of 15mm:
+
+   <img width="60%" src="https://github.com/user-attachments/assets/fb084dde-3071-465e-b35c-237044ac3c3b" />
+   
+</details>
+
+<details>
+
+<summary>VSCode</summary>
+
+1. Download [Release](https://github.com/BingyanStudio/LapisCV/releases/latest) and unzip, open the folder in VSCode.
+2. Install the plugin [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf).
+3. Open template file, click the preview icon in the top right to view the effect in real-time:
+
+   <img width="70%" src="https://github.com/user-attachments/assets/95e0644d-ec50-4442-b9ef-b09f4d5117fc" />
+
+   Right-click and select Markdown PDF - Export (pdf) to export the PDF file.
+
+4. Switch themes:
+   
+   Modify the style path in `.vscode/settings.json`:
+
+   ```
+   "markdown.styles": [
+       "./lapis-cv/styles/main.css",
+       "./lapis-cv/styles/lapis-cv.css", // lapis-cv-serif.css for Serif
+   ],
+   ```
+
+> Other VSCode plugins may affect the style. If the effect is inconsistent, check if any plugins are interfering.
+
+</details>
+
+<details>
+
+<summary>Obsidian</summary>
 
 <br>
-<div align="center">
-<img width="80%" alt="Screenshot" src=".assets/preview.png">
-</div>
 
-### 安装与使用
+Download and unzip [Release](https://github.com/BingyanStudio/LapisCV/releases/latest), open the `lapis-cv-obsidian` directory as a Vault in Obsidian, edit the template, and export the PDF file.
 
-#### Typora
+<img width="70%" src="https://github.com/user-attachments/assets/a9e3ec75-d062-4144-9fc8-c95831e60e4f" />
 
-1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，设置 Lapis Cv 作为主题：
-   
-    1. 在 Typora 菜单中选择 偏好设置 (Preferences) -> 找到外观部分，点击“打开主题文件夹”按钮
-    2. 将 lapis-cv.css 和 lapis-cv 文件夹复制到 Typora 的主题文件夹中
-    3. 重启 Typora，然后从主题列表中选择 Lapis Cv
-    
-3. 打开模版文件 [template.md](templates/typora/template.md) 进行内容编辑，文件 - 导出 - PDF 即可导出 PDF 文件。
+Switch themes in `Options > Appearance > CSS snippets`
 
-#### VSCode
+<img width="60%" src="https://github.com/user-attachments/assets/ac850412-0738-47c3-9983-d07b5993b7c7" />
 
-1. 下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest) 并解压。
-2. 在 VSCode 中打开该文件夹，并安装插件 [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)。
-3. 打开模版文件 [template.md](templates/vscode/template.md) 进行内容编辑，右上角点击 Open Preview 图标可进行实时预览。右键选择 Markdown PDF - Export (pdf) 即可导出 PDF 文件。
+</details>
 
-需要注意，VSCode 中安装的其他插件可能会影响预览显示效果，若预览效果与生成 PDF 中效果不一致，请检查是否有插件影响。
+### Format and Style
 
-#### Obsidian
+<details>
 
-下载 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，将 `lapis-cv-obsidian` 目录作为 Vault 在 Obsidian 打开，编辑 template 并导出 PDF 文件即可。
+<summary>Avatar</summary>
 
-### 格式
+<br>
 
-- 一级标题：姓名块
-- 二级标题：栏标题
-- 三级标题：栏内子标题
-- 引用块：联系方式块
-- 分隔线：**分页标记**
-  
-  支持导出多页简历，可使用分隔线进行手动标记，导出的 PDF 会在分割线处进行一次分页。
-- `<img alt="avatar" src="...">`：头像，编辑头像时替换 src 图片路径即可，不带头像可删除该行
-> Obsidian 无法识别 html 格式的本地图片插入，因此推荐将图片上传为链接再插入
-
-### 自定义样式
-
-支持自定义样式，便于适配不同体量的单页内容 & 根据喜好调整样式细节。
-
-#### Typora
-
-修改主题文件夹中的 `lapis-cv.css` 并重启 Typora。
-
-部分自定义变量含义如下：
-
-```css
-/* Custom Config */
-
-:root {
-    --text-size: 10pt;                      // 文本字体大小
-    --line-height: 1.8;                     // 文本行高
-    --avatar-width: 29mm;                   // 头像宽度
-
-    --text-color: #353a42;                  // 文本颜色，若需打印请改为纯黑
-    --primary-color: #4870ac;               // 主题色
-    --link-color: #0563c1;                  // 链接颜色
-    --shadow-color: #dae3eac9;
-    --border-color: #dae3ea;
-
-    --h1-size: 16pt;                        // 一级标题字体大小
-    --h2-size: 12pt;                        // 二级标题字体大小
-    --h3-size: 10.5pt;                      // 三级标题字体大小
-
-    --text-font: 'SourceHanSansCN';         // 文本字体
-    --title-font: 'SourceHanSerifCN';       // 标题字体
-    --link-font: 'JetBrainsMono';           // 链接字体
-    --code-font: 'JetBrainsMono';           // 代码字体
-}
-
-// 打印页边距
-@media print {
-    @page {
-        margin: 12mm 6mm 0 6mm;             // 上边距 左边距 下边距 右边距
-    }
-}
+```html
+<img alt="avatar" src="...">
 ```
 
-#### VSCode
+Replace the src image path when editing the avatar. Delete this line if no avatar is needed.
 
-修改 `lapis-cv.css` 即可。具体样式可参考上述 Typora 部分。
+> Obsidian cannot recognize local images inserted in HTML format, so it is recommended to upload the image as a link before inserting.
 
-其中页边距需要在 VSCode 设置中修改：
+</details>
 
-- 直接修改 .vscode/settings.json 文件中的 markdown-pdf.margin 相关项。
+<details>
 
-- 另外的，还可以通过 GUI 进行修改：
+<summary>Icons</summary>
 
-    1. 打开 VSCode 设置，选中 Workspace 标签页。
-    2. 搜索 Markdown-pdf › Margin，并修改四边边距。
+<br>
 
-无需重启 VSCode，重新生成 PDF 即可生效。
+Supported Icons:
 
-#### Obsidian
+| Icon | Escaped Unicode | Icon | Escaped Unicode |
+|------|-----------------|------|-----------------|
+| <img src="https://github.com/user-attachments/assets/3e7e6713-dcf2-4fac-b84c-f40887ae0c76" width="32"/> | `&#xe60f;` | <img src="https://github.com/user-attachments/assets/9acae420-7016-4e6b-a0ab-cef418bcb33c" width="32"/> | `&#xe7ca;` |
+| <img src="https://github.com/user-attachments/assets/3bd39547-2e08-4f44-992f-9da011ee9b7d" width="32"/> | `&#xe600;` | <img src="https://github.com/user-attachments/assets/71a468d2-96e2-48df-8aea-fe91c67f7650" width="32"/> | `&#xe618;` |
+| <img src="https://github.com/user-attachments/assets/65e6b2ed-5639-4928-a366-6251297368fa" width="32"/> | `&#xe80c;` | <img src="https://github.com/user-attachments/assets/ad9c952c-96cd-4492-bcbc-9d4f9465e131" width="32"/> | `&#xecfa;` |
+| <img src="https://github.com/user-attachments/assets/88de89a8-887d-4aa1-aefe-69841ef1cfdb" width="32"/> | `&#xe69c;` | <img src="https://github.com/user-attachments/assets/11a913c4-bf4e-441d-8c51-a33cfdcea9f4" width="32"/> | `&#xe6b3;` |
+| <img src="https://github.com/user-attachments/assets/a150e7e7-8024-4e4c-a693-2c0ee3d67fba" width="32"/> | `&#xe8ae;` | <img src="https://github.com/user-attachments/assets/433fb4bf-a79a-4274-877b-d8c8fa281f8b" width="32"/> | `&#xe782;` |
+| <img src="https://github.com/user-attachments/assets/0260e833-0461-483d-94af-595e76385645" width="32"/> | `&#xe8b4;` | <img src="https://github.com/user-attachments/assets/8a59848f-db0a-494b-8966-13625e2a7d72" width="32"/> | `&#xe603;` |
+| <img src="https://github.com/user-attachments/assets/2c7b7f72-ed79-43cc-b238-c9ed2b6bcbc4" width="32"/> | `&#xe8b5;` | <img src="https://github.com/user-attachments/assets/2349f66c-962b-4351-89dc-2d8e2e123c6e" width="32"/> | `&#xe638;` |
+| <img src="https://github.com/user-attachments/assets/7f4d80ce-cc50-4683-aa74-b5aca8b9da6e" width="32"/> | `&#xe635;` | <img src="https://github.com/user-attachments/assets/70b78f69-09be-4a44-b6ed-97be9420c2d1" width="32"/> | `&#xe673;` |
 
-可在 设置 - 外观 中快速更换主题色与字体，其他样式在 `.obsidian/themes/lapis-cv.css` 修改，具体样式可参考上述 Typora 部分。
+</details>
+
+<details>
+
+<summary>Page Breaks & Page Numbers</summary>
+
+<br>
+
+**Page Breaks**
+
+Insert `---` at the position where a page break is needed.
+
+**Page Numbers**
+
+**Typora**
+
+Set the footer in `Preferences > Export > PDF`, e.g., `${pageNo} / ${totalPages}`
+
+**VSCode**
+
+Modify `.vscode/settings.json`:
+
+```
+"markdown-pdf.displayHeaderFooter": true,
+"markdown-pdf.headerTemplate": "<div></div>",
+"markdown-pdf.footerTemplate": "<div style=\"font-size: 9px; margin: 0 auto;\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
+```
+
+**Obsidian**
+
+The software itself does not support adding page numbers directly. You can install plugins for this.
+
+</details>
+
+<details>
+
+<summary>Margins</summary>
+
+<br>
+
+**Typora**
+
+`Preferences > Export > PDF`
+
+**VSCode**
+
+- Directly modify the `markdown-pdf.margin` related items in the `.vscode/settings.json` file.
+
+- Alternatively, modify via GUI:
+
+  1. Open VSCode settings, select the Workspace tab.
+  2. Search for Markdown-pdf › Margin, and modify the margins on all sides.
+
+**Obsidian**
+
+Modify `--file-margins` in the style file, see Custom Styles below.
+
+</details>
+
+<details>
+
+<summary>Custom Styles</summary>
+
+<br>
+
+Custom styles can be used to adapt to different content volumes and adjust details according to preferences.
+
+Modify variables in the corresponding editor's style file `lapis-cv.css` / `lapis-cv-serif.css`:
+
+##### Style File Locations
+
+- Typora: `Preferences > Appearance > Open Theme Folder`
+- VSCode: `lapis-cv/styles` in the folder
+- Obsidian: `Options > Appearance > CSS snippets > Right button - Open snippets folder`
+
+##### Meanings of Some Custom Variables
+
+```css
+
+/* Custom Configs */
+
+/* Basic Configs */
+--text-size: 10pt;                      /* Text font size */
+--line-height: 1.8;                     /* Text line height */
+--avatar-width: 29mm;                   /* Avatar width */
+
+/* Font Configs */
+--h1-size: 16pt;                        /* Level 1 heading font size */
+--h2-size: 12pt;                        /* Level 2 heading font size */
+--h3-size: 10.5pt;                      /* Level 3 heading font size */
+--blockquote-size: 9.3pt;               /* Info block font size */
+
+--text-font: 'SourceHanSansCN';         /* Text font */
+--title-font: 'SourceHanSerifCN';       /* Title font */
+--link-font: 'JetBrainsMono';           /* Link font */
+--code-font: 'JetBrainsMono';           /* Code font */
+
+/* Colors */
+--color-accent: #4870ac;                /* Theme color */
+--text-normal: #353a42;                 /* Text color, change to pure black if printing is needed */
+--link-color: #0563c1;                  /* Link color */
+
+```
+
+> Note: Some styles require restarting the application to take effect.
+
+</details>
+
+## Contributing
+
+Welcome to submit suggestions via [Issues](https://github.com/BingyanStudio/LapisCV/issues) or participate in development via [Pull Request](https://github.com/BingyanStudio/LapisCV/pulls)!
+
+### How to build from source code
+
+```shell
+git clone git@github.com:BingyanStudio/LapisCV.git
+cd LapisCV
+make
+ls build
+```
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/BingyanStudio/LapisCV/blob/main/LICENSE).
+
+## Star History
+
+[![Stargazers over time](https://starchart.cc/BingyanStudio/LapisCV.svg?background=%23ffffff00&axis=%23808080&line=%234870ad)](https://starchart.cc/BingyanStudio/LapisCV)

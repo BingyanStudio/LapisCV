@@ -1,0 +1,120 @@
+/* 
+ *   Lapis CV Serif  /  Author - YiNN (BingyanStudio)
+ *   https://github.com/BingyanStudio/LapisCV
+ */
+
+@import "lapis-cv/styles/main.css";
+
+body,
+:root {
+
+    /* Custom Configs */
+
+    --text-size: 9.5pt;
+    --line-height: 1.8;
+    --avatar-width: 24mm;
+
+    --h1-size: 25pt;
+    --h2-size: 13pt;
+    --h3-size: 11pt;
+    --blockquote-size: 9.3pt;
+
+    --text-font: 'SourceHanSansCN';
+    --title-font: 'SourceHanSerifCN';
+    --link-font: 'JetBrainsMono';
+    --code-font: 'JetBrainsMono';
+
+    --color-accent: #4870ad;
+    --text-normal: #353a42;
+    --link-color: var(--color-accent);
+    --text-strong: #121418;
+    --h1-color: var(--text-normal);
+    --h2-color: var(--color-accent);
+    --h3-color: var(--text-normal);
+    --h4-color: var(--text-normal);
+    --border-color: #dae3ea;
+    --background-primary: #fff;
+}
+
+/* Font Face */
+
+@font-face {
+    font-family: "SourceHanSansCN";
+    src: url('lapis-cv/fonts/SourceHanSansCN-Regular.ttf');
+}
+
+@font-face {
+    font-family: "SourceHanSansCN";
+    src: url('lapis-cv/fonts/SourceHanSansCN-Medium.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "SourceHanSerifCN";
+    src: url('lapis-cv/fonts/SourceHanSerifCN-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url('lapis-cv/fonts/JetBrainsMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: "LapisCV Icon";
+    font-weight: normal;
+    src: url('lapis-cv/fonts/iconfont.ttf?t=1727014108932') format('truetype');
+}
+
+@font-face {
+    font-family: "LapisCV Icon";
+    font-weight: bold;
+    src: url('lapis-cv/fonts/iconfont.ttf?t=1727014108932') format('truetype');
+}
+
+@media screen {
+    #write {
+        top: 10mm !important;
+        max-width: 224mm;
+        box-shadow: 0 0 4mm 0 #a7bbc969;
+        padding-left: 20mm;
+        padding-right: 20mm;
+        padding-top: 15mm;
+    }
+
+    ::before {
+        color: var(--color-accent);
+    }
+}
+
+h1 {
+    padding: 1mm 0 0 0;
+    margin: 3mm 1mm 0 1mm;
+}
+
+h1,
+blockquote p {
+    text-align: left;
+}
+
+h2 {
+    padding: 1.2mm 0;
+}
+
+.avatar,
+img[alt="avatar"] {
+    display: block;
+    position: absolute;
+    box-shadow: none;
+    border: none;
+    top: -25mm;
+    right: 1mm;
+}
+
+blockquote {
+    margin: 0 1mm 6mm 1mm;
+}
+
+blockquote p {
+    line-height: 1.5;
+}

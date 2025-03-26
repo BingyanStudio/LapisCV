@@ -1,0 +1,82 @@
+/* 
+ *   Lapis CV  /  Author - YiNN (BingyanStudio)
+ *   https://github.com/BingyanStudio/LapisCV
+ */
+
+@import "lapis-cv/styles/main.css";
+
+body,
+:root {
+
+    /* Custom Configs */
+
+    --text-size: 10pt;
+    --line-height: 1.8;
+    --avatar-width: 28mm;
+
+    --h1-size: 16pt;
+    --h2-size: 12pt;
+    --h3-size: 10.5pt;
+    --blockquote-size: 9.5pt;
+
+    --text-font: 'SourceHanSansCN';
+    --title-font: 'SourceHanSansCN';
+    --link-font: 'JetBrainsMono';
+    --code-font: 'JetBrainsMono';
+
+    --text-normal: #353a42;
+    --color-accent: #4870ad;
+    --link-color: var(--color-accent);
+    --text-strong: #353a42;
+    --h1-color: var(--text-normal);
+    --h2-color: var(--color-accent);
+    --h3-color: var(--text-normal);
+    --h4-color: var(--text-normal);
+    --border-color: #dae3ea;
+    --background-primary: #fff;
+}
+
+/* Font Face */
+
+@font-face {
+    font-family: "SourceHanSansCN";
+    src: url('lapis-cv/fonts/SourceHanSansCN-Regular.ttf');
+}
+
+@font-face {
+    font-family: "SourceHanSansCN";
+    src: url('lapis-cv/fonts/SourceHanSansCN-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url('lapis-cv/fonts/JetBrainsMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: "LapisCV Icon";
+    font-weight: normal;
+    src: url('lapis-cv/fonts/iconfont.ttf?t=1727014108932') format('truetype');
+}
+
+@font-face {
+    font-family: "LapisCV Icon";
+    font-weight: bold;
+    src: url('lapis-cv/fonts/iconfont.ttf?t=1727014108932') format('truetype');
+}
+
+@media screen {
+    #write {
+        top: 10mm !important;
+        max-width: 224mm;
+        box-shadow: 0 0 4mm 0 #a7bbc969;
+        padding-left: 20mm;
+        padding-right: 20mm;
+        padding-top: 13mm;
+    }
+
+    ::before {
+        color: var(--color-accent);
+    }
+}

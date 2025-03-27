@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LapisCV - Create Beautiful Resumes with Markdown</title>
+    <meta
+      name="description"
+      content="Easily create professional resumes with Markdown on VSCode, Typora, or Obsidian"
+    />
+
+    <script
+      defer
+      src="https://umami.bingyan.net/script.js"
+      data-website-id="a589a55e-9126-4abe-b9e6-14edbaee9f64"
+    ></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#4870ac",
+                DEFAULT: "#4870ac",
+                dark: "#3a5a8a",
+              },
+              secondary: {
+                light: "#2f86d2",
+                DEFAULT: "#2f86d2",
+                dark: "#2568a8",
+              },
+              accent: {
+                light: "#5e76c3",
+                DEFAULT: "#5e76c3",
+                dark: "#4a5d9a",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+              serif: ["SourceHanSerifCN", "ui-serif", "Georgia"],
+              mono: ["JetBrainsMono", "ui-monospace", "SFMono-Regular"],
+            },
+            animation: {
+              "fade-in": "fadeIn 0.5s ease-in-out",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @font-face {
+        font-family: "SourceHanSansCN";
+        src: local("Source Han Sans CN"), local("Noto Sans SC");
+      }
+      @font-face {
+        font-family: "SourceHanSerifCN";
+        src: local("Source Han Serif CN"), local("Noto Serif SC");
+      }
+      @font-face {
+        font-family: "JetBrainsMono";
+        src: local("JetBrains Mono"), local("Menlo"), local("Monaco");
+      }
+
+      .prose {
+        max-width: 100%;
+      }
+      .prose :where(img):not(:where([class~="not-prose"] *)) {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .dark .prose {
+        --tw-prose-body: #e5e7eb;
+        --tw-prose-headings: #f3f4f6;
+        --tw-prose-links: #93c5fd;
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .btn-hover {
+        transition: all 0.2s ease;
+      }
+      .btn-hover:hover {
+        transform: scale(1.02);
+      }
+      .animate-delay-100 {
+        animation-delay: 0.1s;
+      }
+      .animate-delay-200 {
+        animation-delay: 0.2s;
+      }
+
+      /* 段落文本优化 */
+      .prose p {
+        color: #374151; /* gray-700 */
+        font-size: 1.05rem;
+        line-height: 1.625; /* leading-relaxed */
+        margin-bottom: 1rem; /* mb-4 */
+      }
+
+      .dark .prose p {
+        color: #d1d5db; /* gray-300 */
+      }
+
+      /* 列表优化 */
+      .prose ul,
+      .prose ol {
+        margin-bottom: 1rem; /* mb-4 */
+        padding-left: 1.25rem; /* pl-5 */
+      }
+
+      .prose ul {
+        list-style-type: disc;
+      }
+
+      .prose ol {
+        list-style-type: decimal;
+      }
+
+      .prose li {
+        margin-bottom: 0.5rem; /* mb-2 */
+        color: #374151; /* gray-700 */
+        font-size: 1.05rem;
+      }
+
+      .dark .prose li {
+        color: #d1d5db; /* gray-300 */
+      }
+
+      /* 代码块优化 */
+      .prose pre {
+        background-color: #eef1f786; /* gray-100 */
+        padding: 1rem; /* p-4 */
+        border-radius: 0.5rem; /* rounded-lg */
+        margin-bottom: 1rem; /* mb-4 */
+        overflow-x: auto;
+        border: 1px solid rgba(209, 213, 219, 0.5);
+      }
+
+      .dark .prose pre {
+        background-color: #1f2937; /* gray-800 */
+        border-color: rgba(55, 65, 81, 0.5);
+      }
+
+      .prose code {
+        font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+          monospace;
+        font-size: 0.875rem; /* text-sm */
+      }
+
+      /* 行内代码 */
+      .prose :not(pre) > code {
+        background-color: #eef1f786; /* gray-200 */
+        padding: 0.25rem 0.375rem; /* px-1.5 py-0.5 */
+        border-radius: 0.25rem;
+        font-size: 0.9em;
+      }
+
+      .dark .prose :not(pre) > code {
+        background-color: #374151; /* gray-700 */
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700"
+    >
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <div
+            class="w-8 h-8 rounded-md bg-primary-500 flex items-center justify-center text-white"
+          >
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h1 class="text-xl font-bold text-gray-800 dark:text-white">
+            <a href="index.html"> LapisCV </a>
+          </h1>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a
+            href="guide.html"
+            class="inline-flex items-center px-4 py-2 text-base font-medium text-base hover:bg-primary-600 transition-colors"
+          >
+            Guide
+          </a>
+          <a
+            href="https://github.com/BingyanStudio/LapisCV/blob/master/README-CN.md"
+            class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+          >
+            简体中文
+          </a>
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+          </button>
+          <a
+            href="https://github.com/BingyanStudio/LapisCV"
+            class="inline-flex items-center px-4 py-2 text-base font-medium text-base hover:bg-primary-600 transition-colors"
+          >
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Detailed Installation -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Installation
+            </h2>
+          </div>
+
+          <!-- Typora -->
+          <div id="typora-install" class="mb-16">
+            <h3
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
+              <div
+                class="w-8 h-8 rounded-md bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-500 dark:text-blue-300 mr-3"
+              >
+                <i class="fas fa-file-alt text-lg"></i>
+              </div>
+              Typora
+            </h3>
+            <div class="prose dark:prose-invert max-w-none">
+              <ol>
+                <li>
+                  Download
+                  <a
+                    href="https://github.com/BingyanStudio/LapisCV/releases/latest"
+                    class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                    >Release</a
+                  >
+                  and unzip, set the theme:
+                  <ol>
+                    <li>
+                      Open Typora theme folder:
+                      <code>Preferences > Appearance > Open Theme Folder</code>
+                    </li>
+                    <li>
+                      Copy files to the theme folder: <code>lapis-cv.css</code>,
+                      <code>lapis-cv-serif.css</code>,
+                      <code>lapis-cv</code> directory
+                    </li>
+                    <li>
+                      Restart Typora, select <code>Lapis Cv</code> /
+                      <code>Lapis Cv Serif</code> from the theme menu.
+                    </li>
+                  </ol>
+                </li>
+                <li>Open template file to edit.</li>
+                <li>
+                  <code>File > Export > PDF</code> to export the PDF file.
+                </li>
+              </ol>
+              <p>
+                Before exporting, set the page size to A4 and margins to custom
+                in <code>Preferences > Export > PDF</code>, with top and bottom
+                margins of 13mm, and left and right margins of 15mm:
+              </p>
+              <img
+                src="assets/426167338-fb084dde-3071-465e-b35c-237044ac3c3b.png"
+                alt="Typora PDF settings"
+                class="rounded-lg border border-gray-200 dark:border-gray-700 mt-4"
+              />
+            </div>
+          </div>
+
+          <!-- VSCode -->
+          <div id="vscode-install" class="mb-16">
+            <h3
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
+              <span
+                class="w-8 h-8 rounded-md bg-green-100 dark:bg-green-900 flex items-center justify-center text-green-500 dark:text-green-300 mr-3"
+              >
+                <i class="fas fa-code text-lg"></i>
+              </span>
+              VSCode
+            </h3>
+            <div class="prose dark:prose-invert max-w-none">
+              <ol>
+                <li>
+                  Download
+                  <a
+                    href="https://github.com/BingyanStudio/LapisCV/releases/latest"
+                    class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                    >Release</a
+                  >
+                  and unzip, open the folder in VSCode.
+                </li>
+                <li>
+                  Install the plugin
+                  <a
+                    href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf"
+                    class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                    >Markdown PDF</a
+                  >.
+                </li>
+                <li>
+                  Open template file, click the preview icon in the top right to
+                  view the effect in real-time. Right-click and select Markdown
+                  PDF - Export (pdf) to export the PDF file.
+                </li>
+                <li>
+                  Switch themes:
+                  <p>
+                    Modify the style path in <code>.vscode/settings.json</code>:
+                  </p>
+                  <pre
+                    class="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto"
+                  ><code>"markdown.styles": [
+    "./lapis-cv/styles/main.css",
+    "./lapis-cv/styles/lapis-cv.css", // lapis-cv-serif.css for Serif
+],</code></pre>
+                </li>
+              </ol>
+              <div
+                class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-md p-4 mt-4"
+              >
+                <p class="text-blue-800 dark:text-blue-200">
+                  <strong>Note:</strong> Other VSCode plugins may affect the
+                  style. If the effect is inconsistent, check if any plugins are
+                  interfering.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Obsidian -->
+          <div id="obsidian-install">
+            <h3
+              class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+            >
+              <span
+                class="w-8 h-8 rounded-md bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-500 dark:text-purple-300 mr-3"
+              >
+                <i class="fas fa-book text-lg"></i>
+              </span>
+              Obsidian
+            </h3>
+            <div class="prose dark:prose-invert max-w-none">
+              <p>
+                Download and unzip
+                <a
+                  href="https://github.com/BingyanStudio/LapisCV/releases/latest"
+                  class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  >Release</a
+                >, open the <code>lapis-cv-obsidian</code> directory as a Vault
+                in Obsidian, edit the template, and export the PDF file.
+              </p>
+              <p>
+                Switch themes in
+                <code>Options > Appearance > CSS snippets</code>
+              </p>
+              <img
+                src="assets/426167923-ac850412-0738-47c3-9983-d07b5993b7c7.png"
+                alt="Obsidian CSS snippets"
+                class="rounded-lg border border-gray-200 dark:border-gray-700 my-4"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div id="features" class="mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Features & Customization
+            </h2>
+          </div>
+
+          <div class="">
+            <!-- Avatar -->
+            <div id="avatar-feature" class="mb-16">
+              <h3
+                class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+              >
+                <span
+                  class="w-8 h-8 rounded-md bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-indigo-500 dark:text-indigo-300 mr-3"
+                >
+                  <i class="fas fa-user-circle text-lg"></i>
+                </span>
+                Avatar
+              </h3>
+              <div class="prose dark:prose-invert max-w-none">
+                <pre
+                  class="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto"
+                ><code>&lt;img alt="avatar" src="..."&gt;</code></pre>
+                <p>
+                  Replace the src image path when editing the avatar. Delete
+                  this line if no avatar is needed.
+                </p>
+                <div
+                  class="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800 rounded-md p-4 mt-4"
+                >
+                  <p class="text-yellow-800 dark:text-yellow-200">
+                    <strong>Note:</strong> Obsidian cannot recognize local
+                    images inserted in HTML format, so it is recommended to
+                    upload the image as a link before inserting.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Icons -->
+            <div id="icons-feature" class="mb-16">
+              <h3
+                class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+              >
+                <span
+                  class="w-8 h-8 rounded-md bg-pink-100 dark:bg-pink-900 flex items-center justify-center text-pink-500 dark:text-pink-300 mr-3"
+                >
+                  <i class="fas fa-icons text-lg"></i>
+                </span>
+                Icons
+              </h3>
+              <div class="prose dark:prose-invert max-w-none">
+                <p>Supported Icons:</p>
+                <div class="grid grid-cols-4 gap-4 mt-4">
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659674-3e7e6713-dcf2-4fac-b84c-f40887ae0c76.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe60f;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659731-9acae420-7016-4e6b-a0ab-cef418bcb33c.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe7ca;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659765-3bd39547-2e08-4f44-992f-9da011ee9b7d.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe600;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659808-71a468d2-96e2-48df-8aea-fe91c67f7650.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe618;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659845-65e6b2ed-5639-4928-a366-6251297368fa.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe80c;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659871-ad9c952c-96cd-4492-bcbc-9d4f9465e131.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xecfa;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659896-88de89a8-887d-4aa1-aefe-69841ef1cfdb.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe69c;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659925-11a913c4-bf4e-441d-8c51-a33cfdcea9f4.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe6b3;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659953-a150e7e7-8024-4e4c-a693-2c0ee3d67fba.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe8ae;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426659979-433fb4bf-a79a-4274-877b-d8c8fa281f8b.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe782;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426660010-0260e833-0461-483d-94af-595e76385645.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe8b4;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426660041-8a59848f-db0a-494b-8966-13625e2a7d72.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe603;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426660098-2c7b7f72-ed79-43cc-b238-c9ed2b6bcbc4.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe8b5;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426660142-2349f66c-962b-4351-89dc-2d8e2e123c6e.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe638;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426660178-7f4d80ce-cc50-4683-aa74-b5aca8b9da6e.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe635;</code>
+                  </div>
+                  <div class="flex items-center">
+                    <span
+                      class="inline-block w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-md flex items-center justify-center mr-2"
+                    >
+                      <img
+                        src="assets/426660228-70b78f69-09be-4a44-b6ed-97be9420c2d1.png"
+                        width="24"
+                        alt="Icon"
+                      />
+                    </span>
+                    <code class="text-sm">&amp;#xe673;</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Page Breaks -->
+            <div id="page-breaks-feature" class="mb-16">
+              <h3
+                class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+              >
+                <span
+                  class="w-8 h-8 rounded-md bg-red-100 dark:bg-red-900 flex items-center justify-center text-red-500 dark:text-red-300 mr-3"
+                >
+                  <i class="fas fa-file-export text-lg"></i>
+                </span>
+                Page Breaks & Numbers
+              </h3>
+              <div class="prose dark:prose-invert max-w-none">
+                <h4>Page Breaks</h4>
+                <p>
+                  Insert <code>---</code> at the position where a page break is
+                  needed.
+                </p>
+
+                <h4 class="mt-4">Page Numbers</h4>
+                <h5>Typora</h5>
+                <p>
+                  Set the footer in <code>Preferences > Export > PDF</code>,
+                  e.g., <code>${pageNo} / ${totalPages}</code>
+                </p>
+
+                <h5>VSCode</h5>
+                <p>Modify <code>.vscode/settings.json</code>:</p>
+                <pre
+                  class="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto"
+                ><code>"markdown-pdf.displayHeaderFooter": true,
+"markdown-pdf.headerTemplate": "&lt;div&gt;&lt;/div&gt;",
+"markdown-pdf.footerTemplate": "&lt;div style=\"font-size: 9px; margin: 0 auto;\"&gt; &lt;span class='pageNumber'&gt;&lt;/span&gt; / &lt;span class='totalPages'&gt;&lt;/span&gt;&lt;/div&gt;",</code></pre>
+
+                <h5>Obsidian</h5>
+                <p>
+                  The software itself does not support adding page numbers
+                  directly. You can install plugins for this.
+                </p>
+              </div>
+            </div>
+
+            <!-- Margins -->
+            <div id="margins-feature" class="mb-16">
+              <h3
+                class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+              >
+                <span
+                  class="w-8 h-8 rounded-md bg-teal-100 dark:bg-teal-900 flex items-center justify-center text-teal-500 dark:text-teal-300 mr-3"
+                >
+                  <i class="fas fa-ruler-combined text-lg"></i>
+                </span>
+                Margins
+              </h3>
+              <div class="prose dark:prose-invert max-w-none">
+                <h5>Typora</h5>
+                <p><code>Preferences > Export > PDF</code></p>
+
+                <h5 class="mt-4">VSCode</h5>
+                <ul>
+                  <li>
+                    Directly modify the <code>markdown-pdf.margin</code> related
+                    items in the <code>.vscode/settings.json</code> file.
+                  </li>
+                  <li>
+                    Alternatively, modify via GUI:
+                    <ol>
+                      <li>Open VSCode settings, select the Workspace tab.</li>
+                      <li>
+                        Search for Markdown-pdf › Margin, and modify the margins
+                        on all sides.
+                      </li>
+                    </ol>
+                  </li>
+                </ul>
+
+                <h5 class="mt-4">Obsidian</h5>
+                <p>
+                  Modify <code>--file-margins</code> in the style file, see
+                  Custom Styles below.
+                </p>
+              </div>
+            </div>
+
+            <!-- Custom Styles -->
+            <div id="custom-styles-feature" class="mb-16">
+              <h3
+                class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center"
+              >
+                <span
+                  class="w-8 h-8 rounded-md bg-orange-100 dark:bg-orange-900 flex items-center justify-center text-orange-500 dark:text-orange-300 mr-3"
+                >
+                  <i class="fas fa-paint-brush text-lg"></i>
+                </span>
+                Custom Styles
+              </h3>
+              <div class="prose dark:prose-invert max-w-none">
+                <p>
+                  Custom styles can be used to adapt to different content
+                  volumes and adjust details according to preferences.
+                </p>
+                <p>
+                  Modify variables in the corresponding editor's style file
+                  <code>lapis-cv.css</code> / <code>lapis-cv-serif.css</code>:
+                </p>
+
+                <h5 class="mt-4">Style File Locations</h5>
+                <ul>
+                  <li>
+                    Typora:
+                    <code>Preferences > Appearance > Open Theme Folder</code>
+                  </li>
+                  <li>VSCode: <code>lapis-cv/styles</code> in the folder</li>
+                  <li>
+                    Obsidian:
+                    <code
+                      >Options > Appearance > CSS snippets > Right button - Open
+                      snippets folder</code
+                    >
+                  </li>
+                </ul>
+
+                <h5 class="mt-4">Meanings of Some Custom Variables</h5>
+                <pre
+                  class="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto"
+                ><code>/* Custom Configs */
+
+/* Basic Configs */
+--text-size: 10pt;                      /* Text font size */
+--line-height: 1.8;                     /* Text line height */
+--avatar-width: 29mm;                   /* Avatar width */
+
+/* Font Configs */
+--h1-size: 16pt;                        /* Level 1 heading font size */
+--h2-size: 12pt;                        /* Level 2 heading font size */
+--h3-size: 10.5pt;                      /* Level 3 heading font size */
+--blockquote-size: 9.3pt;               /* Info block font size */
+
+--text-font: 'SourceHanSansCN';         /* Text font */
+--title-font: 'SourceHanSerifCN';       /* Title font */
+--link-font: 'JetBrainsMono';           /* Link font */
+--code-font: 'JetBrainsMono';           /* Code font */
+
+/* Colors */
+--color-accent: #4870ac;                /* Theme color */
+--text-normal: #353a42;                 /* Text color, change to pure black if printing is needed */
+--link-color: #0563c1;                  /* Link color */</code></pre>
+                <div
+                  class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-md p-4 mt-4"
+                >
+                  <p class="text-blue-800 dark:text-blue-200">
+                    <strong>Note:</strong> Some styles require restarting the
+                    application to take effect.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+    >
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                LapisCV
+              </h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Easily create professional resumes with Markdown on VSCode,
+              Typora, or Obsidian.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://github.com/BingyanStudio/LapisCV"
+                class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              >
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <a
+                href="https://twitter.com"
+                class="text-gray-500 hover:text-blue-500 transition-colors"
+              >
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a
+                href="https://linkedin.com"
+                class="text-gray-500 hover:text-blue-700 transition-colors"
+              >
+                <i class="fab fa-linkedin text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+            >
+              Resources
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="https://github.com/BingyanStudio/LapisCV/releases"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  >Releases</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/BingyanStudio/LapisCV/issues"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  >Issues</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/BingyanStudio/LapisCV/pulls"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  >Pull Requests</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/BingyanStudio/LapisCV/blob/main/LICENSE"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  >License</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+            >
+              About
+            </h4>
+            <div class="prose dark:prose-invert max-w-none">
+              <p class="text-gray-600 dark:text-gray-300">
+                <strong>Author:</strong> BingyanStudio<br />
+                <strong>License:</strong> MIT License<br />
+                <strong>Copyright:</strong> © 2023 BingyanStudio
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center text-gray-500 dark:text-gray-400"
+        >
+          <p>© 2023 BingyanStudio. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Theme toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      // Check for saved theme preference or use system preference
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        html.classList.add(savedTheme);
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        html.classList.add("dark");
+      }
+
+      // Toggle theme
+      themeToggle.addEventListener("click", () => {
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        } else {
+          html.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Add animation class to elements when they come into view
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll(".animate-fade-in");
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementPosition < windowHeight - 100) {
+            element.classList.add("animate-fade-in");
+          }
+        });
+      };
+
+      // Run once on load and then on scroll
+      window.addEventListener("load", animateOnScroll);
+      window.addEventListener("scroll", animateOnScroll);
+    </script>
+  </body>
+</html>

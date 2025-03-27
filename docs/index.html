@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LapisCV - Easily Create Resumes with Markdown</title>
+    <meta
+      name="description"
+      content="Easily create professional resumes with Markdown on VSCode, Typora, or Obsidian"
+    />
+
+    <script
+      defer
+      src="https://umami.bingyan.net/script.js"
+      data-website-id="a589a55e-9126-4abe-b9e6-14edbaee9f64"
+    ></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#4870ac",
+                DEFAULT: "#4870ac",
+                dark: "#3a5a8a",
+              },
+              secondary: {
+                light: "#2f86d2",
+                DEFAULT: "#2f86d2",
+                dark: "#2568a8",
+              },
+              accent: {
+                light: "#5e76c3",
+                DEFAULT: "#5e76c3",
+                dark: "#4a5d9a",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+              serif: ["SourceHanSerifCN", "ui-serif", "Georgia"],
+              mono: ["JetBrainsMono", "ui-monospace", "SFMono-Regular"],
+            },
+            animation: {
+              "fade-in": "fadeIn 0.5s ease-in-out",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @font-face {
+        font-family: "SourceHanSansCN";
+        src: local("Source Han Sans CN"), local("Noto Sans SC");
+      }
+      @font-face {
+        font-family: "SourceHanSerifCN";
+        src: local("Source Han Serif CN"), local("Noto Serif SC");
+      }
+      @font-face {
+        font-family: "JetBrainsMono";
+        src: local("JetBrains Mono"), local("Menlo"), local("Monaco");
+      }
+
+      .prose {
+        max-width: 100%;
+      }
+      .prose :where(img):not(:where([class~="not-prose"] *)) {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .dark .prose {
+        --tw-prose-body: #e5e7eb;
+        --tw-prose-headings: #f3f4f6;
+        --tw-prose-links: #93c5fd;
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .btn-hover {
+        transition: all 0.2s ease;
+      }
+      .btn-hover:hover {
+        transform: scale(1.02);
+      }
+      .animate-delay-100 {
+        animation-delay: 0.1s;
+      }
+      .animate-delay-200 {
+        animation-delay: 0.2s;
+      }
+
+      .prose p {
+        color: #374151; /* gray-700 */
+        font-size: 1.05rem;
+        line-height: 1.625; /* leading-relaxed */
+        margin-bottom: 1rem; /* mb-4 */
+      }
+
+      .dark .prose p {
+        color: #d1d5db; /* gray-300 */
+      }
+
+      .prose ul,
+      .prose ol {
+        margin-bottom: 1rem; /* mb-4 */
+        padding-left: 1.25rem; /* pl-5 */
+      }
+
+      .prose ul {
+        list-style-type: disc;
+      }
+
+      .prose ol {
+        list-style-type: decimal;
+      }
+
+      .prose li {
+        margin-bottom: 0.5rem; /* mb-2 */
+        color: #374151; /* gray-700 */
+        font-size: 1.05rem;
+      }
+
+      .dark .prose li {
+        color: #d1d5db; /* gray-300 */
+      }
+
+      .prose pre {
+        background-color: #eef1f786; /* gray-100 */
+        padding: 1rem; /* p-4 */
+        border-radius: 0.5rem; /* rounded-lg */
+        margin-bottom: 1rem; /* mb-4 */
+        overflow-x: auto;
+        border: 1px solid rgba(209, 213, 219, 0.5);
+      }
+
+      .dark .prose pre {
+        background-color: #1f2937; /* gray-800 */
+        border-color: rgba(55, 65, 81, 0.5);
+      }
+
+      .prose code {
+        font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+          monospace;
+        font-size: 0.875rem; /* text-sm */
+      }
+
+      .prose :not(pre) > code {
+        background-color: #eef1f786; /* gray-200 */
+        padding: 0.25rem 0.375rem; /* px-1.5 py-0.5 */
+        border-radius: 0.25rem;
+        font-size: 0.9em;
+      }
+
+      .dark .prose :not(pre) > code {
+        background-color: #374151; /* gray-700 */
+      }
+
+      /* Custom transitions for smoother animation */
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: all 0.3s ease-in-out;
+      }
+      .fade-enter-from,
+      .fade-leave-to {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      .fade-enter-to,
+      .fade-leave-from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700"
+    >
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <h1 class="text-xl font-bold text-gray-800 dark:text-white">
+            <a href="index.html"> LapisCV </a>
+          </h1>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a
+            href="guide.html"
+            class="inline-flex items-center px-4 py-2 text-base font-medium text-base hover:bg-primary-600 transition-colors"
+          >
+            Guide
+          </a>
+          <a
+            href="https://github.com/BingyanStudio/LapisCV/blob/master/README-CN.md"
+            class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+          >
+            简体中文
+          </a>
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+          </button>
+          <a
+            href="https://github.com/BingyanStudio/LapisCV"
+            class="inline-flex items-center px-4 py-2 text-base font-medium text-base hover:bg-primary-600 transition-colors"
+          >
+            <i class="fab fa-github mr-2"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="py-24 bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-indigo-900/30 dark:via-gray-800/50 dark:to-gray-900"
+    >
+      <div class="container mx-auto px-4 text-center animate-fade-in">
+        <div class="max-w-3xl mx-auto">
+          <!-- Main title with gradient text -->
+          <h1
+            class="py-4 text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            <span class="block mb-4">📃 Easily Create Resumes</span>
+            <span>with Markdown</span>
+          </h1>
+
+          <!-- Subtitle with animated icon -->
+          <p
+            class="text-xl text-gray-600 dark:text-gray-300 mb-6 relative inline-block"
+          >
+            Easily craft professional resumes on
+            <span class="font-medium text-teal-600 dark:text-teal-300"
+              >Typora</span
+            >,
+            <span class="font-medium text-sky-600 dark:text-sky-300"
+              >VSCode</span
+            >,
+            <span class="font-medium text-indigo-600 dark:text-indigo-300"
+              >Obsidian</span
+            >
+          </p>
+
+          <!-- Stats with colorful badges -->
+          <div class="flex justify-center gap-4 mb-10">
+            <div
+              class="flex items-center bg-amber-50 dark:bg-amber-900/40 px-2 py-1 rounded-lg"
+            >
+              <i
+                class="fas fa-star text-amber-800 mr-2 dark:text-amber-300"
+              ></i>
+              <span
+                class="text-sm md:text-sm text-amber-800 dark:text-amber-200"
+                >3.3K+ Stars</span
+              >
+            </div>
+            <div
+              class="flex items-center bg-lime-50 dark:bg-lime-900/40 px-2 py-1 rounded-lg"
+            >
+              <i
+                class="fas fa-download text-lime-800 mr-2 dark:text-lime-300"
+              ></i>
+              <span class="text-sm md:text-sm text-lime-800 dark:text-lime-200"
+                >6K+ Downloads</span
+              >
+            </div>
+          </div>
+
+          <!-- CTA Buttons with Improved Interaction -->
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="#quick-start"
+              class="group relative inline-flex items-center px-6 py-3 text-base font-semibold rounded-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Get Started
+            </a>
+            <a
+              href="https://github.com/BingyanStudio/LapisCV/releases/latest"
+              class="group relative inline-flex items-center px-6 py-3 text-base font-semibold rounded-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-2 text-gray-600 dark:text-gray-300"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              Download
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section id="preview" class="py-16 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            View Samples
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Choose from clean, professional designs that work across multiple
+            editors
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center space-y-12 max-w-3xl mx-auto">
+          <!-- Template 1 -->
+          <div
+            class="card-hover bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 animate-fade-in w-full"
+          >
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                LapisCV Serif
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">New in v2.0.0</p>
+              <div class="aspect-w-3 aspect-h-4 rounded-md overflow-hidden">
+                <img
+                  src="assets/426570167-0ce9e9f2-8a75-4fd0-a6e1-4bf981c2c735.png"
+                  alt="LapisCV Serif Template"
+                  class="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 2 -->
+          <div
+            class="card-hover bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-300 animate-fade-in animate-delay-100 w-full"
+          >
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                LapisCV
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Classic version
+              </p>
+              <div class="aspect-w-3 aspect-h-4 rounded-md overflow-hidden">
+                <img
+                  src="assets/426571037-38f43bdc-47df-4401-9e3d-0a02da4d034d.png"
+                  alt="LapisCV Template"
+                  class="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section id="quick-start" class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Quick Start
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Get started with LapisCV in your favorite editor
+          </p>
+        </div>
+
+        <!-- Quick Start Cards Container -->
+        <div
+          id="quick-start-cards"
+          class="grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-500 ease-in-out"
+        >
+          <!-- Typora -->
+          <div
+            id="typora-card"
+            class="card-hover bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300"
+          >
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 rounded-md bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-500 dark:text-blue-300 mr-3"
+                >
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Typora
+                </h3>
+              </div>
+              <ol
+                class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300"
+              >
+                <li>Download and unzip the latest release</li>
+                <li>Open Typora theme folder</li>
+                <li>Copy theme files and restart</li>
+                <li>Edit template and export to PDF</li>
+              </ol>
+              <div class="mt-6">
+                <img
+                  src="assets/426572165-86ff88ca-e473-4d1d-9b92-717339bdaee4.png"
+                  alt="Typora settings"
+                  class="rounded-md border border-gray-200 dark:border-gray-600"
+                />
+              </div>
+              <div class="mt-6">
+                <a
+                  href="guide.html#typora-install"
+                  data-platform="typora"
+                  class="view-details inline-flex items-center text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 font-medium"
+                >
+                  View detailed instructions
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- VSCode -->
+          <div
+            id="vscode-card"
+            class="card-hover bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300"
+          >
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 rounded-md bg-green-100 dark:bg-green-900 flex items-center justify-center text-green-500 dark:text-green-300 mr-3"
+                >
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                  VSCode
+                </h3>
+              </div>
+              <ol
+                class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300"
+              >
+                <li>Download and unzip the release</li>
+                <li>Install Markdown PDF plugin</li>
+                <li>Open folder in VSCode</li>
+                <li>Edit and export to PDF</li>
+              </ol>
+              <div class="mt-6">
+                <img
+                  src="assets/426199301-95e0644d-ec50-4442-b9ef-b09f4d5117fc.png"
+                  alt="VSCode preview"
+                  class="rounded-md border border-gray-200 dark:border-gray-600"
+                />
+              </div>
+              <div class="mt-6">
+                <a
+                  href="guide.html#vscode-install"
+                  data-platform="vscode"
+                  class="view-details inline-flex items-center text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 font-medium"
+                >
+                  View detailed instructions
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Obsidian -->
+          <div
+            id="obsidian-card"
+            class="card-hover bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300"
+          >
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 rounded-md bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-500 dark:text-purple-300 mr-3"
+                >
+                  <i class="fas fa-book"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Obsidian
+                </h3>
+              </div>
+              <ol
+                class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300"
+              >
+                <li>Download and unzip the release</li>
+                <li>Open as Vault in Obsidian</li>
+                <li>Edit the template</li>
+                <li>Export to PDF</li>
+              </ol>
+              <div class="mt-6">
+                <img
+                  src="assets/a9e3ec75-d062-4144-9fc8-c95831e60e4f.png"
+                  alt="Obsidian interface"
+                  class="rounded-md border border-gray-200 dark:border-gray-600"
+                />
+              </div>
+              <div class="mt-6">
+                <a
+                  href="guide.html#obsidian-install"
+                  data-platform="obsidian"
+                  class="view-details inline-flex items-center text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 font-medium"
+                >
+                  View detailed instructions
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Features & Customization
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Tailor your resume with these powerful features
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Avatar -->
+          <div
+            class="card-hover bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300"
+          >
+            <div class="p-6">
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 rounded-md bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-indigo-500 dark:text-indigo-300 mr-3"
+                >
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Avatar
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Icons -->
+          <div
+            class="card-hover bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300"
+          >
+            <div class="p-6">
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 rounded-md bg-pink-100 dark:bg-pink-900 flex items-center justify-center text-pink-500 dark:text-pink-300 mr-3"
+                >
+                  <i class="fas fa-icons"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Icons
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page Breaks -->
+          <div
+            class="card-hover bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300"
+          >
+            <div class="p-6">
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 rounded-md bg-red-100 dark:bg-red-900 flex items-center justify-center text-red-500 dark:text-red-300 mr-3"
+                >
+                  <i class="fas fa-file-export"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Page Breaks & Numbers
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Margins -->
+          <div
+            class="card-hover bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300"
+          >
+            <div class="p-6">
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 rounded-md bg-teal-100 dark:bg-teal-900 flex items-center justify-center text-teal-500 dark:text-teal-300 mr-3"
+                >
+                  <i class="fas fa-ruler-combined"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Margins
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Styles -->
+          <div
+            class="card-hover bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300"
+          >
+            <div class="p-6">
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 rounded-md bg-orange-100 dark:bg-orange-900 flex items-center justify-center text-orange-500 dark:text-orange-300 mr-3"
+                >
+                  <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Custom Styles
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-all duration-300"
+          >
+            <div class="p-8">
+              <div class="prose dark:prose-invert max-w-none">
+                <a
+                  href="guide.html#features"
+                  class="inline-flex items-center text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 font-medium"
+                >
+                  View Details
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+    >
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                LapisCV
+              </h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Easily create professional resumes with Markdown on VSCode,
+              Typora, or Obsidian.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://bingyan.net"
+                class="text-gray-500 hover:text-blue-500 transition-colors"
+              >
+                <i class="fas fa-globe text-xl"></i>
+              </a>
+              <a
+                href="https://github.com/BingyanStudio"
+                class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              >
+                <i class="fab fa-github text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+            >
+              Resources
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="https://github.com/BingyanStudio/LapisCV/releases"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  >Releases</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/BingyanStudio/LapisCV/issues"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  >Issues</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/BingyanStudio/LapisCV/pulls"
+                  class="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  >Pull Requests</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+            >
+              About
+            </h4>
+            <div class="prose dark:prose-invert max-w-none">
+              <p class="text-gray-600 dark:text-gray-300">
+                <strong>License:</strong> MIT License<br />
+                <strong>Copyright:</strong> © 2025 BingyanStudio
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Theme toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      // Check for saved theme preference or use system preference
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        html.classList.add(savedTheme);
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        html.classList.add("dark");
+      }
+
+      // Toggle theme
+      themeToggle.addEventListener("click", () => {
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        } else {
+          html.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Add animation class to elements when they come into view
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll(".animate-fade-in");
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementPosition < windowHeight - 100) {
+            element.classList.add("animate-fade-in");
+          }
+        });
+      };
+
+      // Run once on load and then on scroll
+      window.addEventListener("load", animateOnScroll);
+      window.addEventListener("scroll", animateOnScroll);
+    </script>
+  </body>
+</html>

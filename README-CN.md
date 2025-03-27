@@ -19,11 +19,11 @@
 ## 预览
 
 <div align="center">
-    <img src=".assets/426570167-0ce9e9f2-8a75-4fd0-a6e1-4bf981c2c735.png" />
+    <img src="docs/assets/426570167-0ce9e9f2-8a75-4fd0-a6e1-4bf981c2c735.png" />
     <p>LapisCV Serif （v2.0.0 新增）</p>
-    <img src=".assets/426571037-38f43bdc-47df-4401-9e3d-0a02da4d034d.png" />
+    <img src="docs/assets/426571037-38f43bdc-47df-4401-9e3d-0a02da4d034d.png" />
     <p>LapisCV</p>
-    <img width="80%" src=".assets/426572165-86ff88ca-e473-4d1d-9b92-717339bdaee4.png" />
+    <img width="80%" src="docs/assets/426572165-86ff88ca-e473-4d1d-9b92-717339bdaee4.png" />
     <p>Typora 编辑页</p>
 </div>
 
@@ -46,7 +46,7 @@
 
    导出前需在 `设置 > 导出 > PDF` 中设置页面大小为 A4，页边距为自定义，上下边距为 13mm，左右边距为 15mm:
 
-   <img width="60%" src=".assets/426167338-fb084dde-3071-465e-b35c-237044ac3c3b.png" />
+   <img width="60%" src="docs/assets/426167338-fb084dde-3071-465e-b35c-237044ac3c3b.png" />
    
 </details>
 
@@ -58,7 +58,7 @@
 2. 安装插件 [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)。
 3. 打开 template 文件，点击右上角预览图标实时查看效果：
 
-   <img width="70%" src=".assets/426199301-95e0644d-ec50-4442-b9ef-b09f4d5117fc.png" />
+   <img width="70%" src="docs/assets/426199301-95e0644d-ec50-4442-b9ef-b09f4d5117fc.png" />
 
 
    右键选择 Markdown PDF - Export (pdf) 即可导出 PDF 文件。
@@ -86,11 +86,11 @@
 
 下载并解压 [Release](https://github.com/BingyanStudio/LapisCV/releases/latest)，将 `lapis-cv-obsidian` 目录作为 Vault 在 Obsidian 打开，编辑 template 并导出 PDF 文件即可。
 
-<img width="70%" src=".assets/a9e3ec75-d062-4144-9fc8-c95831e60e4f.png" />
+<img width="70%" src="docs/assets/a9e3ec75-d062-4144-9fc8-c95831e60e4f.png" />
 
 在 `设置 > 外观 > CSS 代码片段` 中切换主题
 
-<img width="60%" src=".assets/426167923-ac850412-0738-47c3-9983-d07b5993b7c7.png" />
+<img width="60%" src="docs/assets/426167923-ac850412-0738-47c3-9983-d07b5993b7c7.png" />
 
 </details>
 
@@ -123,14 +123,14 @@
 
 | Icon | Escaped Unicode | Icon | Escaped Unicode |
 |------|-----------------|------|-----------------|
-| <img src=".assets/426659674-3e7e6713-dcf2-4fac-b84c-f40887ae0c76.png" width="32"/> | `&#xe60f;` | <img src=".assets/426659731-9acae420-7016-4e6b-a0ab-cef418bcb33c.png" width="32"/> | `&#xe7ca;` |
-| <img src=".assets/426659765-3bd39547-2e08-4f44-992f-9da011ee9b7d.png" width="32"/> | `&#xe600;` | <img src=".assets/426659808-71a468d2-96e2-48df-8aea-fe91c67f7650.png" width="32"/> | `&#xe618;` |
-| <img src=".assets/426659845-65e6b2ed-5639-4928-a366-6251297368fa.png" width="32"/> | `&#xe80c;` | <img src=".assets/426659871-ad9c952c-96cd-4492-bcbc-9d4f9465e131.png" width="32"/> | `&#xecfa;` |
-| <img src=".assets/426659896-88de89a8-887d-4aa1-aefe-69841ef1cfdb.png" width="32"/> | `&#xe69c;` | <img src=".assets/426659925-11a913c4-bf4e-441d-8c51-a33cfdcea9f4.png" width="32"/> | `&#xe6b3;` |
-| <img src=".assets/426659953-a150e7e7-8024-4e4c-a693-2c0ee3d67fba.png" width="32"/> | `&#xe8ae;` | <img src=".assets/426659979-433fb4bf-a79a-4274-877b-d8c8fa281f8b.png" width="32"/> | `&#xe782;` |
-| <img src=".assets/426660010-0260e833-0461-483d-94af-595e76385645.png" width="32"/> | `&#xe8b4;` | <img src=".assets/426660041-8a59848f-db0a-494b-8966-13625e2a7d72.png" width="32"/> | `&#xe603;` |
-| <img src=".assets/426660098-2c7b7f72-ed79-43cc-b238-c9ed2b6bcbc4.png" width="32"/> | `&#xe8b5;` | <img src=".assets/426660142-2349f66c-962b-4351-89dc-2d8e2e123c6e.png" width="32"/> | `&#xe638;` |
-| <img src=".assets/426660178-7f4d80ce-cc50-4683-aa74-b5aca8b9da6e.png" width="32"/> | `&#xe635;` | <img src=".assets/426660228-70b78f69-09be-4a44-b6ed-97be9420c2d1.png" width="32"/> | `&#xe673;` |
+| <img src="docs/assets/426659674-3e7e6713-dcf2-4fac-b84c-f40887ae0c76.png" width="32"/> | `&#xe60f;` | <img src="docs/assets/426659731-9acae420-7016-4e6b-a0ab-cef418bcb33c.png" width="32"/> | `&#xe7ca;` |
+| <img src="docs/assets/426659765-3bd39547-2e08-4f44-992f-9da011ee9b7d.png" width="32"/> | `&#xe600;` | <img src="docs/assets/426659808-71a468d2-96e2-48df-8aea-fe91c67f7650.png" width="32"/> | `&#xe618;` |
+| <img src="docs/assets/426659845-65e6b2ed-5639-4928-a366-6251297368fa.png" width="32"/> | `&#xe80c;` | <img src="docs/assets/426659871-ad9c952c-96cd-4492-bcbc-9d4f9465e131.png" width="32"/> | `&#xecfa;` |
+| <img src="docs/assets/426659896-88de89a8-887d-4aa1-aefe-69841ef1cfdb.png" width="32"/> | `&#xe69c;` | <img src="docs/assets/426659925-11a913c4-bf4e-441d-8c51-a33cfdcea9f4.png" width="32"/> | `&#xe6b3;` |
+| <img src="docs/assets/426659953-a150e7e7-8024-4e4c-a693-2c0ee3d67fba.png" width="32"/> | `&#xe8ae;` | <img src="docs/assets/426659979-433fb4bf-a79a-4274-877b-d8c8fa281f8b.png" width="32"/> | `&#xe782;` |
+| <img src="docs/assets/426660010-0260e833-0461-483d-94af-595e76385645.png" width="32"/> | `&#xe8b4;` | <img src="docs/assets/426660041-8a59848f-db0a-494b-8966-13625e2a7d72.png" width="32"/> | `&#xe603;` |
+| <img src="docs/assets/426660098-2c7b7f72-ed79-43cc-b238-c9ed2b6bcbc4.png" width="32"/> | `&#xe8b5;` | <img src="docs/assets/426660142-2349f66c-962b-4351-89dc-2d8e2e123c6e.png" width="32"/> | `&#xe638;` |
+| <img src="docs/assets/426660178-7f4d80ce-cc50-4683-aa74-b5aca8b9da6e.png" width="32"/> | `&#xe635;` | <img src="docs/assets/426660228-70b78f69-09be-4a44-b6ed-97be9420c2d1.png" width="32"/> | `&#xe673;` |
 
 </details>
 

@@ -49,10 +49,24 @@ body,
     font-weight: bold;
 }
 
+/* Latin + Greek + Cyrillic */
+@font-face {
+    font-family: "SourceHanSansCN";
+    src: url('../fonts/JetBrainsMono-Regular.ttf');
+    unicode-range: U+00-52F, U+1E00-1FFF, U+2200-22FF;
+}
+
 @font-face {
     font-family: "SourceHanSerifCN";
     src: url('lapis-cv/fonts/SourceHanSerifCN-Bold.ttf');
     font-weight: bold;
+}
+
+/* Latin + Greek + Cyrillic */
+@font-face {
+    font-family: "SourceHanSerifCN";
+    src: url('../fonts/JetBrainsMono-Regular.ttf');
+    unicode-range: U+00-52F, U+1E00-1FFF, U+2200-22FF;
 }
 
 @font-face {

@@ -7,7 +7,9 @@
     📄 通过 Markdown 轻松打造简历
 </p>
 <div align="center">
-    <img alt="Release" src="https://img.shields.io/github/v/release/BingyanStudio/LapisCV?style=flat-square&color=1694b6">
+    <a href="https://atomgit.com/BingyanStudio/LapisCV/releases">
+        <img alt="Release" src="https://img.shields.io/github/v/release/BingyanStudio/LapisCV?style=flat-square&color=1694b6">
+    </a>
     &nbsp;
     <img alt="Stars" src="https://img.shields.io/github/stars/BingyanStudio/LapisCV?style=flat-square&color=2f86d2">
     &nbsp;
@@ -34,6 +36,8 @@
 ## 快速上手
 
 ### 安装
+
+> 对于位于中国大陆的用户，我们推荐前往 [AtomGit Release](https://atomgit.com/BingyanStudio/LapisCV/releases) 镜像下载文件，以获得更快的下载速度。
 
 <details>
 

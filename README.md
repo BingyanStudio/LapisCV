@@ -12,11 +12,16 @@
     📄 Easily create resumes with Markdown on VSCode / Typora / Obsidian
 </p>
 <div align="center">
-    <img alt="Release" src="https://img.shields.io/github/v/release/BingyanStudio/LapisCV?style=flat-square&color=1694b6">
+    <a href="https://github.com/BingyanStudio/LapisCV/releases">
+        <img alt="Release" src="https://img.shields.io/github/v/release/BingyanStudio/LapisCV?style=flat-square&color=1694b6">
+    </a>
     &nbsp;
     <img alt="Stars" src="https://img.shields.io/github/stars/BingyanStudio/LapisCV?style=flat-square&color=2f86d2">
     &nbsp;
-    <img alt="Downloads" src="https://img.shields.io/github/downloads/BingyanStudio/LapisCV/total?style=flat-square&color=5e76c3">  
+    <img alt="Downloads" src="https://img.shields.io/github/downloads/BingyanStudio/LapisCV/total?style=flat-square&color=5e76c3">
+    <a href="https://atomgit.com/BingyanStudio/LapisCV">
+        <img alt="AtomGit Mirror" src="https://atomgit.com/BingyanStudio/LapisCV/star/badge.svg">
+    </a>
 </div><br>
 
 ## View Samples
